@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-sw600dp-v13/mtrl_layout_snackbar.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
+    }
+]

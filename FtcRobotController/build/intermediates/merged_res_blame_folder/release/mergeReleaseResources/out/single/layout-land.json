@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-land/material_timepicker.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/layout-land/material_timepicker.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-land/material_clock_period_toggle_land.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/layout-land/material_clock_period_toggle_land.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-land/mtrl_picker_header_dialog.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/layout-land/mtrl_picker_header_dialog.xml"
+    }
+]

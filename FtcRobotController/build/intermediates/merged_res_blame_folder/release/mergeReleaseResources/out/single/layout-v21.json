@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-core-1.13.1-26:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-core-1.13.1-26:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-core-1.13.1-26:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/layout-v21/notification_action.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-core-1.13.1-26:/layout-v21/notification_action.xml"
+    }
+]

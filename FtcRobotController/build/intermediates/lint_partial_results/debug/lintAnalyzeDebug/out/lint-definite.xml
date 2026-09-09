@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.0" type="incidents">
+
+    <incident
+        id="WrongCommentType"
+        severity="warning"
+        message="This block comment looks like it was intended to be a javadoc comment">
+        <fix-replace
+            description="Replace with /**"
+            robot="true"
+            independent="true"
+            oldString="/*"
+            replacement="/**"
+            priority="0">
+            <range
+                file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorBNO055IMU.java"
+                startOffset="2606"
+                endOffset="3217"/>
+        </fix-replace>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorBNO055IMU.java"
+            line="57"
+            column="4"
+            startOffset="3144"
+            endLine="57"
+            endColumn="73"
+            endOffset="3213"/>
+    </incident>
+
+    <incident
+        id="WrongCommentType"
+        severity="warning"
+        message="This block comment looks like it was intended to be a javadoc comment">
+        <fix-replace
+            description="Replace with /**"
+            robot="true"
+            independent="true"
+            oldString="/*"
+            replacement="/**"
+            priority="0">
+            <range
+                file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorLimelight3A.java"
+                startOffset="2169"
+                endOffset="3480"/>
+        </fix-replace>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorLimelight3A.java"
+            line="50"
+            column="4"
+            startOffset="2247"
+            endLine="50"
+            endColumn="60"
+            endOffset="2303"/>
+    </incident>
+
+    <incident
+        id="WrongCommentType"
+        severity="warning"
+        message="This block comment looks like it was intended to be a javadoc comment">
+        <fix-replace
+            description="Replace with /**"
+            robot="true"
+            independent="true"
+            oldString="/*"
+            replacement="/**"
+            priority="0">
+            <range
+                file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java"
+                startOffset="2901"
+                endOffset="3422"/>
+        </fix-replace>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java"
+            line="58"
+            column="45"
+            startOffset="3126"
+            endLine="58"
+            endColumn="73"
+            endOffset="3154"/>
+    </incident>
+
+    <incident
+        id="WrongCommentType"
+        severity="warning"
+        message="This block comment looks like it was intended to be a javadoc comment">
+        <fix-replace
+            description="Replace with /**"
+            robot="true"
+            independent="true"
+            oldString="/*"
+            replacement="/**"
+            priority="0">
+            <range
+                file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRRangeSensor.java"
+                startOffset="2060"
+                endOffset="2514"/>
+        </fix-replace>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRRangeSensor.java"
+            line="46"
+            column="4"
+            startOffset="2434"
+            endLine="46"
+            endColumn="80"
+            endOffset="2510"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java"
+            line="198"
+            column="35"
+            startOffset="8737"
+            endLine="198"
+            endColumn="108"
+            endOffset="8810"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java"
+            line="199"
+            column="35"
+            startOffset="8847"
+            endLine="199"
+            endColumn="144"
+            endOffset="8956"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java"
+            line="200"
+            column="35"
+            startOffset="8993"
+            endLine="200"
+            endColumn="152"
+            endOffset="9110"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java"
+            line="201"
+            column="35"
+            startOffset="9147"
+            endLine="201"
+            endColumn="172"
+            endOffset="9284"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java"
+            line="203"
+            column="35"
+            startOffset="9342"
+            endLine="203"
+            endColumn="88"
+            endOffset="9395"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java"
+            line="204"
+            column="35"
+            startOffset="9432"
+            endLine="204"
+            endColumn="121"
+            endOffset="9518"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java"
+            line="144"
+            column="35"
+            startOffset="6072"
+            endLine="144"
+            endColumn="108"
+            endOffset="6145"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java"
+            line="145"
+            column="35"
+            startOffset="6182"
+            endLine="145"
+            endColumn="144"
+            endOffset="6291"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java"
+            line="146"
+            column="35"
+            startOffset="6328"
+            endLine="146"
+            endColumn="152"
+            endOffset="6445"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java"
+            line="147"
+            column="35"
+            startOffset="6482"
+            endLine="147"
+            endColumn="172"
+            endOffset="6619"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java"
+            line="149"
+            column="35"
+            startOffset="6677"
+            endLine="149"
+            endColumn="88"
+            endOffset="6730"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java"
+            line="150"
+            column="35"
+            startOffset="6767"
+            endLine="150"
+            endColumn="121"
+            endOffset="6853"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java"
+            line="226"
+            column="35"
+            startOffset="10428"
+            endLine="226"
+            endColumn="108"
+            endOffset="10501"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java"
+            line="229"
+            column="39"
+            startOffset="10675"
+            endLine="232"
+            endColumn="65"
+            endOffset="10916"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java"
+            line="233"
+            column="39"
+            startOffset="10957"
+            endLine="236"
+            endColumn="92"
+            endOffset="11281"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java"
+            line="239"
+            column="35"
+            startOffset="11357"
+            endLine="239"
+            endColumn="88"
+            endOffset="11410"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java"
+            line="240"
+            column="35"
+            startOffset="11447"
+            endLine="240"
+            endColumn="121"
+            endOffset="11533"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java"
+            line="157"
+            column="35"
+            startOffset="6003"
+            endLine="157"
+            endColumn="108"
+            endOffset="6076"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java"
+            line="158"
+            column="35"
+            startOffset="6113"
+            endLine="158"
+            endColumn="144"
+            endOffset="6222"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java"
+            line="159"
+            column="35"
+            startOffset="6259"
+            endLine="159"
+            endColumn="152"
+            endOffset="6376"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java"
+            line="160"
+            column="35"
+            startOffset="6413"
+            endLine="160"
+            endColumn="172"
+            endOffset="6550"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java"
+            line="162"
+            column="35"
+            startOffset="6608"
+            endLine="162"
+            endColumn="88"
+            endOffset="6661"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java"
+            line="163"
+            column="35"
+            startOffset="6698"
+            endLine="163"
+            endColumn="121"
+            endOffset="6784"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptGamepadTouchpad.java"
+            line="58"
+            column="35"
+            startOffset="2360"
+            endLine="58"
+            endColumn="139"
+            endOffset="2464"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptGamepadTouchpad.java"
+            line="65"
+            column="35"
+            startOffset="2670"
+            endLine="65"
+            endColumn="139"
+            endOffset="2774"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorLocator_Circle.java"
+            line="237"
+            column="35"
+            startOffset="14378"
+            endLine="238"
+            endColumn="124"
+            endOffset="14547"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorLocator_Rectangle.java"
+            line="209"
+            column="35"
+            startOffset="12114"
+            endLine="211"
+            endColumn="88"
+            endOffset="12362"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java"
+            line="147"
+            column="31"
+            startOffset="8102"
+            endLine="148"
+            endColumn="89"
+            endOffset="8229"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java"
+            line="149"
+            column="31"
+            startOffset="8262"
+            endLine="150"
+            endColumn="89"
+            endOffset="8389"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java"
+            line="151"
+            column="31"
+            startOffset="8422"
+            endLine="152"
+            endColumn="95"
+            endOffset="8555"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java"
+            line="72"
+            column="40"
+            startOffset="3253"
+            endLine="72"
+            endColumn="110"
+            endOffset="3323"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java"
+            line="73"
+            column="40"
+            startOffset="3365"
+            endLine="73"
+            endColumn="110"
+            endOffset="3435"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java"
+            line="74"
+            column="40"
+            startOffset="3477"
+            endLine="74"
+            endColumn="112"
+            endOffset="3549"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java"
+            line="75"
+            column="40"
+            startOffset="3591"
+            endLine="75"
+            endColumn="112"
+            endOffset="3663"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorKLNavxMicro.java"
+            line="118"
+            column="16"
+            startOffset="6157"
+            endLine="118"
+            endColumn="43"
+            endOffset="6184"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorKLNavxMicro.java"
+            line="126"
+            column="16"
+            startOffset="6393"
+            endLine="126"
+            endColumn="75"
+            endOffset="6452"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java"
+            line="149"
+            column="12"
+            startOffset="7232"
+            endLine="149"
+            endColumn="41"
+            endOffset="7261"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java"
+            line="153"
+            column="12"
+            startOffset="7313"
+            endLine="153"
+            endColumn="39"
+            endOffset="7340"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java"
+            line="157"
+            column="12"
+            startOffset="7393"
+            endLine="157"
+            endColumn="39"
+            endOffset="7420"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorOctoQuadLocalization.java"
+            line="213"
+            column="31"
+            startOffset="10277"
+            endLine="213"
+            endColumn="103"
+            endOffset="10349"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java"
+            line="74"
+            column="40"
+            startOffset="3373"
+            endLine="74"
+            endColumn="110"
+            endOffset="3443"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java"
+            line="75"
+            column="40"
+            startOffset="3485"
+            endLine="75"
+            endColumn="110"
+            endOffset="3555"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java"
+            line="76"
+            column="40"
+            startOffset="3597"
+            endLine="76"
+            endColumn="112"
+            endOffset="3669"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java"
+            line="77"
+            column="40"
+            startOffset="3711"
+            endLine="77"
+            endColumn="112"
+            endOffset="3783"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorSparkFunOTOS.java"
+            line="152"
+            column="27"
+            startOffset="7598"
+            endLine="152"
+            endColumn="107"
+            endOffset="7678"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorSparkFunOTOS.java"
+            line="153"
+            column="27"
+            startOffset="7707"
+            endLine="153"
+            endColumn="107"
+            endOffset="7787"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java"
+            line="133"
+            column="21"
+            startOffset="6324"
+            endLine="133"
+            endColumn="61"
+            endOffset="6364"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java"
+            line="143"
+            column="21"
+            startOffset="6753"
+            endLine="143"
+            endColumn="63"
+            endOffset="6795"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java"
+            line="155"
+            column="21"
+            startOffset="7333"
+            endLine="155"
+            endColumn="65"
+            endOffset="7377"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java"
+            line="161"
+            column="21"
+            startOffset="7611"
+            endLine="161"
+            endColumn="65"
+            endOffset="7655"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java"
+            line="167"
+            column="21"
+            startOffset="7898"
+            endLine="167"
+            endColumn="70"
+            endOffset="7947"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java"
+            line="687"
+            column="24"
+            startOffset="25557"
+            endLine="687"
+            endColumn="100"
+            endOffset="25633"/>
+    </incident>
+
+    <incident
+        id="SdCardPath"
+        severity="warning"
+        message="Do not hardcode &quot;/sdcard/&quot;; use `Environment.getExternalStorageDirectory().getPath()` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java"
+            line="69"
+            column="40"
+            startOffset="3825"
+            endLine="69"
+            endColumn="49"
+            endOffset="3834"/>
+    </incident>
+
+    <incident
+        id="SdCardPath"
+        severity="warning"
+        message="Do not hardcode &quot;/sdcard/&quot;; use `Environment.getExternalStorageDirectory().getPath()` instead">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java"
+            line="70"
+            column="40"
+            startOffset="3902"
+            endLine="70"
+            endColumn="49"
+            endOffset="3911"/>
+    </incident>
+
+    <incident
+        id="RedundantLabel"
+        severity="warning"
+        message="Redundant label can be removed">
+        <fix-attribute
+            description="Delete label"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="label"/>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="26"
+            column="15"
+            startOffset="1062"
+            endLine="26"
+            endColumn="47"
+            endOffset="1094"/>
+    </incident>
+
+    <incident
+        id="RedundantLabel"
+        severity="warning"
+        message="Redundant label can be removed">
+        <fix-attribute
+            description="Delete label"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="label"/>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="40"
+            column="7"
+            startOffset="1548"
+            endLine="40"
+            endColumn="39"
+            endOffset="1580"/>
+    </incident>
+
+    <incident
+        id="DiscouragedApi"
+        severity="warning"
+        message="Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed.">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="24"
+            column="15"
+            startOffset="950"
+            endLine="24"
+            endColumn="51"
+            endOffset="986"/>
+    </incident>
+
+    <incident
+        id="DiscouragedApi"
+        severity="warning"
+        message="Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed.">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="38"
+            column="7"
+            startOffset="1452"
+            endLine="38"
+            endColumn="43"
+            endOffset="1488"/>
+    </incident>
+
+    <incident
+        id="DiscouragedApi"
+        severity="warning"
+        message="Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. `R.foo.bar`) than by name (e.g. `getIdentifier(&quot;bar&quot;, &quot;foo&quot;, null)`).">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsASJava.java"
+            line="88"
+            column="67"
+            startOffset="4317"
+            endLine="88"
+            endColumn="80"
+            endOffset="4330"/>
+    </incident>
+
+    <incident
+        id="DiscouragedApi"
+        severity="warning"
+        message="Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. `R.foo.bar`) than by name (e.g. `getIdentifier(&quot;bar&quot;, &quot;foo&quot;, null)`).">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsASJava.java"
+            line="89"
+            column="67"
+            startOffset="4456"
+            endLine="89"
+            endColumn="80"
+            endOffset="4469"/>
+    </incident>
+
+    <incident
+        id="DiscouragedApi"
+        severity="warning"
+        message="Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. `R.foo.bar`) than by name (e.g. `getIdentifier(&quot;bar&quot;, &quot;foo&quot;, null)`).">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsSKYSTONE.java"
+            line="95"
+            column="53"
+            startOffset="4699"
+            endLine="95"
+            endColumn="66"
+            endOffset="4712"/>
+    </incident>
+
+    <incident
+        id="DiscouragedApi"
+        severity="warning"
+        message="Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. `R.foo.bar`) than by name (e.g. `getIdentifier(&quot;bar&quot;, &quot;foo&quot;, null)`).">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorColor.java"
+            line="97"
+            column="66"
+            startOffset="5638"
+            endLine="97"
+            endColumn="79"
+            endOffset="5651"/>
+    </incident>
+
+    <incident
+        id="DiscouragedApi"
+        severity="warning"
+        message="Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. `R.foo.bar`) than by name (e.g. `getIdentifier(&quot;bar&quot;, &quot;foo&quot;, null)`).">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRColor.java"
+            line="71"
+            column="66"
+            startOffset="3160"
+            endLine="71"
+            endColumn="79"
+            endOffset="3173"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 24">
+        <fix-data conditional="true"/>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java"
+            line="599"
+            column="11"
+            startOffset="25105"
+            endLine="599"
+            endColumn="86"
+            endOffset="25180"/>
+    </incident>
+
+    <incident
+        id="IconMissingDensityFolder"
+        severity="warning"
+        message="Missing density variation folders in `src/main/res`: drawable-hdpi, drawable-mdpi, drawable-xxhdpi">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="Custom view ``LinearLayout`` has `setOnTouchListener` called on it but does not override `performClick`">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java"
+            line="433"
+            column="5"
+            startOffset="19021"
+            endLine="439"
+            endColumn="7"
+            endOffset="19231"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="`onTouch` should call `View#performClick` when a click is detected">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*javaDir*0}/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java"
+            line="435"
+            column="22"
+            startOffset="19125"
+            endLine="435"
+            endColumn="29"
+            endOffset="19132"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ftc_controller.xml"
+            line="51"
+            column="6"
+            startOffset="2392"
+            endLine="51"
+            endColumn="15"
+            endOffset="2401"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ftc_controller.xml"
+            line="69"
+            column="6"
+            startOffset="3004"
+            endLine="69"
+            endColumn="17"
+            endOffset="3015"/>
+    </incident>
+
+    <incident
+        id="RelativeOverlap"
+        severity="warning"
+        message="`@id/textDeviceName` can overlap `@id/menu_buttons` if @id/textDeviceName grows due to localized text expansion">
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_ftc_controller.xml"
+            line="59"
+            column="6"
+            startOffset="2651"
+            endLine="59"
+            endColumn="14"
+            endOffset="2659"/>
+    </incident>
+
+</incidents>

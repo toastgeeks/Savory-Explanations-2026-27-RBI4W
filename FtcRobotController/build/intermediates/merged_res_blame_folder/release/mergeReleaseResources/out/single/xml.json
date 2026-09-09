@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/teamwebcamcalibrations.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-RobotCore-11.1.0-8:/xml/teamwebcamcalibrations.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/ftc_about_activity.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/ftc_about_activity.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/advanced_rc_settings.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/advanced_rc_settings.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/k9legacybot.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/k9legacybot.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/app_settings.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-main-41:/xml/app_settings.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/rev_scoot.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/rev_scoot.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/ftc_about_activity_rc.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/ftc_about_activity_rc.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/k9usbbot.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/k9usbbot.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/builtinwebcamcalibrations.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-RobotCore-11.1.0-8:/xml/builtinwebcamcalibrations.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/maxmodules.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/maxmodules.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/device_filter.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-main-41:/xml/device_filter.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/pushbotsens.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/pushbotsens.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/squarebot.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/squarebot.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/pushbot.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-FtcCommon-11.1.0-15:/xml/pushbot.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/xml/file_provider_paths.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-RobotCore-11.1.0-8:/xml/file_provider_paths.xml"
+    }
+]

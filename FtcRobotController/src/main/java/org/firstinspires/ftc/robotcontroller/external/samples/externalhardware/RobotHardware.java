@@ -76,6 +76,10 @@ public class RobotHardware {
         myOpMode = opmode;
     }
 
+    public RobotHardware() {
+
+    }
+
     /**
      * Initialize all the robot's hardware.
      * This method must be called ONCE when the OpMode is initialized.

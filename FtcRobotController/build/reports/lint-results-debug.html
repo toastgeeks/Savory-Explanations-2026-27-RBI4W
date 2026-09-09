@@ -1,0 +1,2331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lint Report</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-indigo.min.css" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+<style>
+section.section--center {
+    max-width: 860px;
+}
+.mdl-card__supporting-text + .mdl-card__actions {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+main > .mdl-layout__tab-panel {
+  padding: 8px;
+  padding-top: 48px;
+}
+
+.mdl-card__actions {
+    margin: 0;
+    padding: 4px 40px;
+    color: inherit;
+}
+.mdl-card > * {
+    height: auto;
+}
+.mdl-card__actions a {
+    color: #00BCD4;
+    margin: 0;
+}
+.error-icon {
+    color: #bb7777;
+    vertical-align: bottom;
+}
+.warning-icon {
+    vertical-align: bottom;
+}
+.mdl-layout__content section:not(:last-of-type) {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.mdl-card .mdl-card__supporting-text {
+  margin: 40px;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0;
+  color: inherit;
+  width: calc(100% - 80px);
+}
+div.mdl-layout__drawer-button .material-icons {
+    line-height: 48px;
+}
+.mdl-card .mdl-card__supporting-text {
+    margin-top: 0px;
+}
+.chips {
+    float: right;
+    vertical-align: middle;
+}
+
+pre.errorlines {
+    background-color: white;
+    font-family: monospace;
+    border: 1px solid #e0e0e0;
+    line-height: 0.9rem;
+    font-size: 0.9rem;    padding: 1px 0px 1px; 1px;
+    overflow: scroll;
+}
+.prefix {
+    color: #660e7a;
+    font-weight: bold;
+}
+.attribute {
+    color: #0000ff;
+    font-weight: bold;
+}
+.value {
+    color: #008000;
+    font-weight: bold;
+}
+.tag {
+    color: #000080;
+    font-weight: bold;
+}
+.comment {
+    color: #808080;
+    font-style: italic;
+}
+.javadoc {
+    color: #808080;
+    font-style: italic;
+}
+.annotation {
+    color: #808000;
+}
+.string {
+    color: #008000;
+    font-weight: bold;
+}
+.number {
+    color: #0000ff;
+}
+.keyword {
+    color: #000080;
+    font-weight: bold;
+}
+.caretline {
+    background-color: #fffae3;
+}
+.lineno {
+    color: #999999;
+    background-color: #f0f0f0;
+}
+.error {
+    display: inline-block;
+    position:relative;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AwCFR4T/3uLMgAAADxJREFUCNdNyLERQEAABMCjL4lQwIzcjErpguAL+C9AvgKJDbeD/PRpLdm35Hm+MU+cB+tCKaJW4L4YBy+CAiLJrFs9mgAAAABJRU5ErkJggg==) bottom repeat-x;
+}
+.warning {
+    text-decoration: none;
+    background-color: #f6ebbc;
+}
+.overview {
+    padding: 10pt;
+    width: 100%;
+    overflow: auto;
+    border-collapse:collapse;
+}
+.overview tr {
+    border-bottom: solid 1px #eeeeee;
+}
+.categoryColumn a {
+     text-decoration: none;
+     color: inherit;
+}
+.countColumn {
+    text-align: right;
+    padding-right: 20px;
+    width: 50px;
+}
+.issueColumn {
+   padding-left: 16px;
+}
+.categoryColumn {
+   position: relative;
+   left: -50px;
+   padding-top: 20px;
+   padding-bottom: 5px;
+}
+.options {
+   padding-left: 16px;
+}
+</style>
+<script language="javascript" type="text/javascript">
+<!--
+function reveal(id) {
+if (document.getElementById) {
+document.getElementById(id).style.display = 'block';
+document.getElementById(id+'Link').style.display = 'none';
+}
+}
+function hideid(id) {
+if (document.getElementById) {
+document.getElementById(id).style.display = 'none';
+}
+}
+//-->
+</script>
+</head>
+<body class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Lint Report: 76 warnings</span>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Aug 25 18:50:24 CDT 2026 by AGP (8.7.0)</nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Issue Types</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
+      <a class="mdl-navigation__link" href="#WrongCommentType"><i class="material-icons warning-icon">warning</i>Wrong Comment Type (4)</a>
+      <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (52)</a>
+      <a class="mdl-navigation__link" href="#SdCardPath"><i class="material-icons warning-icon">warning</i>Hardcoded reference to <code>/sdcard</code> (2)</a>
+      <a class="mdl-navigation__link" href="#RedundantLabel"><i class="material-icons warning-icon">warning</i>Redundant label on activity (2)</a>
+      <a class="mdl-navigation__link" href="#DiscouragedApi"><i class="material-icons warning-icon">warning</i>Using discouraged APIs (7)</a>
+      <a class="mdl-navigation__link" href="#IntentFilterExportedReceiver"><i class="material-icons warning-icon">warning</i>Unspecified <code>android:exported</code> in manifest (2)</a>
+      <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
+      <a class="mdl-navigation__link" href="#IconMissingDensityFolder"><i class="material-icons warning-icon">warning</i>Missing density folder (1)</a>
+      <a class="mdl-navigation__link" href="#ClickableViewAccessibility"><i class="material-icons warning-icon">warning</i>Accessibility in Custom Views (2)</a>
+      <a class="mdl-navigation__link" href="#ContentDescription"><i class="material-icons warning-icon">warning</i>Image without <code>contentDescription</code> (2)</a>
+      <a class="mdl-navigation__link" href="#RelativeOverlap"><i class="material-icons warning-icon">warning</i>Overlapping items in RelativeLayout (1)</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="mdl-layout__tab-panel is-active">
+<a name="overview"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="OverviewCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Overview</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<table class="overview">
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
+</td></tr>
+<tr>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#WrongCommentType">WrongCommentType</a>: Wrong Comment Type</td></tr>
+<tr>
+<td class="countColumn">52</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#DefaultLocale">DefaultLocale</a>: Implied default locale in case conversion</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#SdCardPath">SdCardPath</a>: Hardcoded reference to <code>/sdcard</code></td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#RedundantLabel">RedundantLabel</a>: Redundant label on activity</td></tr>
+<tr>
+<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#DiscouragedApi">DiscouragedApi</a>: Using discouraged APIs</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
+</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#IntentFilterExportedReceiver">IntentFilterExportedReceiver</a>: Unspecified <code>android:exported</code> in manifest</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#IconMissingDensityFolder">IconMissingDensityFolder</a>: Missing density folder</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Accessibility">Accessibility</a>
+</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ClickableViewAccessibility">ClickableViewAccessibility</a>: Accessibility in Custom Views</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ContentDescription">ContentDescription</a>: Image without <code>contentDescription</code></td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Internationalization">Internationalization</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#RelativeOverlap">RelativeOverlap</a>: Overlapping items in RelativeLayout</td></tr>
+<tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (21)</a>
+</td></tr>
+<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (39)</a>
+</td></tr>
+</table>
+<br/>              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OverviewCardLink" onclick="hideid('OverviewCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Correctness"></a>
+<a name="WrongCommentType"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="WrongCommentTypeCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Wrong Comment Type</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorBNO055IMU.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorBNO055IMU.java</a>:57</span>: <span class="message">This block comment looks like it was intended to be a javadoc comment</span><br /><pre class="errorlines">
+<span class="lineno">  54 </span><span class="comment"> * Use Android Studio to Copy this Class, and Paste it into your team's code folder with a new name.
+</span><span class="lineno">  55 </span><span class="comment"> * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
+</span><span class="lineno">  56 </span><span class="comment"> *
+</span><span class="caretline"><span class="lineno">  57 </span><span class="comment"> * </span><span class="warning"><span class="comment">@see &lt;a href="http://www.adafruit.com/products/2472">Adafruit IMU&lt;/a></span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">
+</span><span class="lineno">  58 </span><span class="comment"> */</span>
+<span class="lineno">  59 </span><span class="annotation">@TeleOp</span>(name = <span class="string">"Sensor: BNO055 IMU"</span>, group = <span class="string">"Sensor"</span>)
+<span class="lineno">  60 </span><span class="annotation">@Disabled</span>   <span class="comment">// Comment this out to add to the OpMode list</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorLimelight3A.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorLimelight3A.java</a>:50</span>: <span class="message">This block comment looks like it was intended to be a javadoc comment</span><br /><pre class="errorlines">
+<span class="lineno">  47 </span><span class="comment">/*
+</span><span class="lineno">  48 </span><span class="comment"> * This OpMode illustrates how to use the Limelight3A Vision Sensor.
+</span><span class="lineno">  49 </span><span class="comment"> *
+</span><span class="caretline"><span class="lineno">  50 </span><span class="comment"> * </span><span class="warning"><span class="comment">@see &lt;a href="https://limelightvision.io/">Limelight&lt;/a></span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">
+</span><span class="lineno">  51 </span><span class="comment"> *
+</span><span class="lineno">  52 </span><span class="comment"> * Notes on configuration:
+</span><span class="lineno">  53 </span><span class="comment"> *
+</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java</a>:58</span>: <span class="message">This block comment looks like it was intended to be a javadoc comment</span><br /><pre class="errorlines">
+<span class="lineno">  55 </span>
+<span class="lineno">  56 </span>  <span class="comment">/* In this sample, for illustration purposes we use two interfaces on the one gyro object.
+</span><span class="lineno">  57 </span><span class="comment">   * That's likely atypical: you'll probably use one or the other in any given situation,
+</span><span class="caretline"><span class="lineno">  58 </span><span class="comment">   * depending on what you're trying to do. </span><span class="warning"><span class="comment">{@link IntegratingGyroscope}</span></span><span class="comment"> (and it's base interface,</span>&nbsp;&nbsp;</span><span class="comment">
+</span><span class="lineno">  59 </span><span class="comment">   * {@link Gyroscope}) are common interfaces supported by possibly several different gyro
+</span><span class="lineno">  60 </span><span class="comment">   * implementations. {@link ModernRoboticsI2cGyro}, by contrast, provides functionality that
+</span><span class="lineno">  61 </span><span class="comment">   * is unique to the Modern Robotics gyro sensor.
+</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRRangeSensor.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRRangeSensor.java</a>:46</span>: <span class="message">This block comment looks like it was intended to be a javadoc comment</span><br /><pre class="errorlines">
+<span class="lineno"> 43 </span><span class="comment"> * Use Android Studio to Copy this Class, and Paste it into your team's code folder with a new name.
+</span><span class="lineno"> 44 </span><span class="comment"> * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
+</span><span class="lineno"> 45 </span><span class="comment"> *
+</span><span class="caretline"><span class="lineno"> 46 </span><span class="comment"> * </span><span class="warning"><span class="comment">@see &lt;a href="http://modernroboticsinc.com/range-sensor">MR Range Sensor&lt;/a></span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">
+</span><span class="lineno"> 47 </span><span class="comment"> */</span>
+<span class="lineno"> 48 </span><span class="annotation">@TeleOp</span>(name = <span class="string">"Sensor: MR range sensor"</span>, group = <span class="string">"Sensor"</span>)
+<span class="lineno"> 49 </span><span class="annotation">@Disabled</span>   <span class="comment">// comment out or remove this line to enable this OpMode</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationWrongCommentType" style="display: none;">
+This check flags any block comments which look like they had been intended to be KDoc or javadoc comments instead.<br/>
+<br/>
+If you really want to use Javadoc-like constructs in a block comment, there's a convention you can use: include <code>(non-Javadoc)</code> somewhere in the comment, e.g.
+<pre>
+  /* (non-Javadoc)
+   * @see org.xml.sax.helpers.DefaultHandler#setDocumentLocator(org.xml.sax.Locator)
+   */
+  @Override
+  public void setDocumentLocator(Locator locator) {
+</pre>
+(see <a href="https://stackoverflow.com/questions/5172841/non-javadoc-meaning">https://stackoverflow.com/questions/5172841/non-javadoc-meaning</a>)<br/>To suppress this error, use the issue id "WrongCommentType" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">WrongCommentType</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 9/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationWrongCommentTypeLink" onclick="reveal('explanationWrongCommentType');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="WrongCommentTypeCardLink" onclick="hideid('WrongCommentTypeCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="DefaultLocale"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="DefaultLocaleCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Implied default locale in case conversion</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java</a>:198</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 195 </span>  <span class="comment">// Step through the list of detections and display info for each one.</span>
+<span class="lineno"> 196 </span>  <span class="keyword">for</span> (AprilTagDetection detection : currentDetections) {
+<span class="lineno"> 197 </span>      <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno"> 198 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name)</span>);</span>
+<span class="lineno"> 199 </span>          telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="lineno"> 200 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 201 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java</a>:199</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 196 </span>  <span class="keyword">for</span> (AprilTagDetection detection : currentDetections) {
+<span class="lineno"> 197 </span>      <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="lineno"> 198 </span>          telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="caretline"><span class="lineno"> 199 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z)</span>);</span>
+<span class="lineno"> 200 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 201 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 202 </span>      } <span class="keyword">else</span> {
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java</a>:200</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 197 </span>  <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="lineno"> 198 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="lineno"> 199 </span>      telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="caretline"><span class="lineno"> 200 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw)</span>);</span>
+<span class="lineno"> 201 </span>      telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 202 </span>  } <span class="keyword">else</span> {
+<span class="lineno"> 203 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java</a>:201</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 198 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="lineno"> 199 </span>      telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="lineno"> 200 </span>      telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="caretline"><span class="lineno"> 201 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation)</span>);</span>
+<span class="lineno"> 202 </span>  } <span class="keyword">else</span> {
+<span class="lineno"> 203 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+<span class="lineno"> 204 </span>      telemetry.addLine(String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java</a>:203</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 200 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 201 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 202 </span>      } <span class="keyword">else</span> {
+<span class="caretline"><span class="lineno"> 203 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id)</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 204 </span>          telemetry.addLine(String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y));
+<span class="lineno"> 205 </span>      }
+<span class="lineno"> 206 </span>  }   <span class="comment">// end for() loop</span></pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="DefaultLocaleDivLink" onclick="reveal('DefaultLocaleDiv');" />+ 47 More Occurrences...</button>
+<div id="DefaultLocaleDiv" style="display: none">
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTag.java</a>:204</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 201 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 202 </span>      } <span class="keyword">else</span> {
+<span class="lineno"> 203 </span>          telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+<span class="caretline"><span class="lineno"> 204 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y)</span>);</span>
+<span class="lineno"> 205 </span>      }
+<span class="lineno"> 206 </span>  }   <span class="comment">// end for() loop</span>
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java</a>:144</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 141 </span>  <span class="comment">// Step through the list of detections and display info for each one.</span>
+<span class="lineno"> 142 </span>  <span class="keyword">for</span> (AprilTagDetection detection : currentDetections) {
+<span class="lineno"> 143 </span>      <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno"> 144 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name)</span>);</span>
+<span class="lineno"> 145 </span>          telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="lineno"> 146 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 147 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java</a>:145</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 142 </span>  <span class="keyword">for</span> (AprilTagDetection detection : currentDetections) {
+<span class="lineno"> 143 </span>      <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="lineno"> 144 </span>          telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="caretline"><span class="lineno"> 145 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z)</span>);</span>
+<span class="lineno"> 146 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 147 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 148 </span>      } <span class="keyword">else</span> {
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java</a>:146</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 143 </span>  <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="lineno"> 144 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="lineno"> 145 </span>      telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="caretline"><span class="lineno"> 146 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw)</span>);</span>
+<span class="lineno"> 147 </span>      telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 148 </span>  } <span class="keyword">else</span> {
+<span class="lineno"> 149 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java</a>:147</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 144 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="lineno"> 145 </span>      telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="lineno"> 146 </span>      telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="caretline"><span class="lineno"> 147 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation)</span>);</span>
+<span class="lineno"> 148 </span>  } <span class="keyword">else</span> {
+<span class="lineno"> 149 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+<span class="lineno"> 150 </span>      telemetry.addLine(String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java</a>:149</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 146 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 147 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 148 </span>      } <span class="keyword">else</span> {
+<span class="caretline"><span class="lineno"> 149 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id)</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 150 </span>          telemetry.addLine(String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y));
+<span class="lineno"> 151 </span>      }
+<span class="lineno"> 152 </span>  }   <span class="comment">// end for() loop</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagEasy.java</a>:150</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 147 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 148 </span>      } <span class="keyword">else</span> {
+<span class="lineno"> 149 </span>          telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+<span class="caretline"><span class="lineno"> 150 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y)</span>);</span>
+<span class="lineno"> 151 </span>      }
+<span class="lineno"> 152 </span>  }   <span class="comment">// end for() loop</span>
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java</a>:226</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 223 </span>  <span class="comment">// Step through the list of detections and display info for each one.</span>
+<span class="lineno"> 224 </span>  <span class="keyword">for</span> (AprilTagDetection detection : currentDetections) {
+<span class="lineno"> 225 </span>      <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno"> 226 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name)</span>);</span>
+<span class="lineno"> 227 </span>          <span class="comment">// Only use tags that don't have Obelisk in them</span>
+<span class="lineno"> 228 </span>          <span class="keyword">if</span> (!detection.metadata.name.contains(<span class="string">"Obelisk"</span>)) {
+<span class="lineno"> 229 </span>              telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>,
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java</a>:229</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 226 </span>  telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="lineno"> 227 </span>  <span class="comment">// Only use tags that don't have Obelisk in them</span>
+<span class="lineno"> 228 </span>  <span class="keyword">if</span> (!detection.metadata.name.contains(<span class="string">"Obelisk"</span>)) {
+<span class="caretline"><span class="lineno"> 229 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>,</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 230 </span>              detection.robotPose.getPosition().x,
+<span class="lineno"> 231 </span>              detection.robotPose.getPosition().y,
+<span class="lineno"> 232 </span>              detection.robotPose.getPosition().z));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java</a>:233</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 230 </span>             detection.robotPose.getPosition().x,
+<span class="lineno"> 231 </span>             detection.robotPose.getPosition().y,
+<span class="lineno"> 232 </span>             detection.robotPose.getPosition().z));
+<span class="caretline"><span class="lineno"> 233 </span>     telemetry.addLine(<span class="warning">String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>,</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 234 </span>             detection.robotPose.getOrientation().getPitch(AngleUnit.DEGREES),
+<span class="lineno"> 235 </span>             detection.robotPose.getOrientation().getRoll(AngleUnit.DEGREES),
+<span class="lineno"> 236 </span>             detection.robotPose.getOrientation().getYaw(AngleUnit.DEGREES)));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java</a>:239</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 236 </span>                      detection.robotPose.getOrientation().getYaw(AngleUnit.DEGREES)));
+<span class="lineno"> 237 </span>          }
+<span class="lineno"> 238 </span>      } <span class="keyword">else</span> {
+<span class="caretline"><span class="lineno"> 239 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id)</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 240 </span>          telemetry.addLine(String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y));
+<span class="lineno"> 241 </span>      }
+<span class="lineno"> 242 </span>  }   <span class="comment">// end for() loop</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagLocalization.java</a>:240</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 237 </span>          }
+<span class="lineno"> 238 </span>      } <span class="keyword">else</span> {
+<span class="lineno"> 239 </span>          telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+<span class="caretline"><span class="lineno"> 240 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y)</span>);</span>
+<span class="lineno"> 241 </span>      }
+<span class="lineno"> 242 </span>  }   <span class="comment">// end for() loop</span>
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java</a>:157</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 154 </span>  <span class="comment">// Step through the list of detections and display info for each one.</span>
+<span class="lineno"> 155 </span>  <span class="keyword">for</span> (AprilTagDetection detection : currentDetections) {
+<span class="lineno"> 156 </span>      <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno"> 157 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name)</span>);</span>
+<span class="lineno"> 158 </span>          telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="lineno"> 159 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 160 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java</a>:158</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 155 </span>  <span class="keyword">for</span> (AprilTagDetection detection : currentDetections) {
+<span class="lineno"> 156 </span>      <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="lineno"> 157 </span>          telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="caretline"><span class="lineno"> 158 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z)</span>);</span>
+<span class="lineno"> 159 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 160 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 161 </span>      } <span class="keyword">else</span> {
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java</a>:159</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 156 </span>  <span class="keyword">if</span> (detection.metadata != <span class="keyword">null</span>) {
+<span class="lineno"> 157 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="lineno"> 158 </span>      telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="caretline"><span class="lineno"> 159 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw)</span>);</span>
+<span class="lineno"> 160 </span>      telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 161 </span>  } <span class="keyword">else</span> {
+<span class="lineno"> 162 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java</a>:160</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 157 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) %s"</span>, detection.id, detection.metadata.name));
+<span class="lineno"> 158 </span>      telemetry.addLine(String.format(<span class="string">"XYZ %6.1f %6.1f %6.1f  (inch)"</span>, detection.ftcPose.x, detection.ftcPose.y, detection.ftcPose.z));
+<span class="lineno"> 159 </span>      telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="caretline"><span class="lineno"> 160 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation)</span>);</span>
+<span class="lineno"> 161 </span>  } <span class="keyword">else</span> {
+<span class="lineno"> 162 </span>      telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+<span class="lineno"> 163 </span>      telemetry.addLine(String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java</a>:162</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 159 </span>          telemetry.addLine(String.format(<span class="string">"PRY %6.1f %6.1f %6.1f  (deg)"</span>, detection.ftcPose.pitch, detection.ftcPose.roll, detection.ftcPose.yaw));
+<span class="lineno"> 160 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 161 </span>      } <span class="keyword">else</span> {
+<span class="caretline"><span class="lineno"> 162 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id)</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 163 </span>          telemetry.addLine(String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y));
+<span class="lineno"> 164 </span>      }
+<span class="lineno"> 165 </span>  }   <span class="comment">// end for() loop</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptAprilTagSwitchableCameras.java</a>:163</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 160 </span>          telemetry.addLine(String.format(<span class="string">"RBE %6.1f %6.1f %6.1f  (inch, deg, deg)"</span>, detection.ftcPose.range, detection.ftcPose.bearing, detection.ftcPose.elevation));
+<span class="lineno"> 161 </span>      } <span class="keyword">else</span> {
+<span class="lineno"> 162 </span>          telemetry.addLine(String.format(<span class="string">"\n==== (ID %d) Unknown"</span>, detection.id));
+<span class="caretline"><span class="lineno"> 163 </span>          telemetry.addLine(<span class="warning">String.format(<span class="string">"Center %6.0f %6.0f   (pixels)"</span>, detection.center.x, detection.center.y)</span>);</span>
+<span class="lineno"> 164 </span>      }
+<span class="lineno"> 165 </span>  }   <span class="comment">// end for() loop</span>
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptGamepadTouchpad.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptGamepadTouchpad.java</a>:58</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 55 </span>  <span class="keyword">if</span>(gamepad1.touchpad_finger_1)
+<span class="lineno"> 56 </span>  {
+<span class="lineno"> 57 </span>      finger = <span class="keyword">true</span>;
+<span class="caretline"><span class="lineno"> 58 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"Finger 1: x=%5.2f y=%5.2f\n"</span>, gamepad1.touchpad_finger_1_x, gamepad1.touchpad_finger_1_y)</span>);</span>
+<span class="lineno"> 59 </span>  }
+<span class="lineno"> 60 </span>
+<span class="lineno"> 61 </span>  <span class="comment">// Display finger 2 x &amp; y position if finger detected</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptGamepadTouchpad.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptGamepadTouchpad.java</a>:65</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 62 </span>  <span class="keyword">if</span>(gamepad1.touchpad_finger_2)
+<span class="lineno"> 63 </span>  {
+<span class="lineno"> 64 </span>      finger = <span class="keyword">true</span>;
+<span class="caretline"><span class="lineno"> 65 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"Finger 2: x=%5.2f y=%5.2f\n"</span>, gamepad1.touchpad_finger_2_x, gamepad1.touchpad_finger_2_y)</span>);</span>
+<span class="lineno"> 66 </span>  }
+<span class="lineno"> 67 </span>
+<span class="lineno"> 68 </span>  <span class="keyword">if</span>(!finger)
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorLocator_Circle.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorLocator_Circle.java</a>:237</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 234 </span>  <span class="keyword">for</span> (ColorBlobLocatorProcessor.Blob b : blobs) {
+<span class="lineno"> 235 </span>
+<span class="lineno"> 236 </span>      Circle circleFit = b.getCircle();
+<span class="caretline"><span class="lineno"> 237 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"%5.3f      %3d     (%3d,%3d)"</span>,</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 238 </span>                 b.getCircularity(), (<span class="keyword">int</span>) circleFit.getRadius(), (<span class="keyword">int</span>) circleFit.getX(), (<span class="keyword">int</span>) circleFit.getY()));
+<span class="lineno"> 239 </span>  }
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorLocator_Rectangle.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorLocator_Rectangle.java</a>:209</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 206 </span>  <span class="keyword">for</span>(ColorBlobLocatorProcessor.Blob b : blobs)
+<span class="lineno"> 207 </span>  {
+<span class="lineno"> 208 </span>      RotatedRect boxFit = b.getBoxFit();
+<span class="caretline"><span class="lineno"> 209 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"(%3d,%3d) %5d %4.2f  %5.2f %3d %5.3f "</span>,</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 210 </span>              (<span class="keyword">int</span>) boxFit.center.x, (<span class="keyword">int</span>) boxFit.center.y, b.getContourArea(), b.getDensity(),
+<span class="lineno"> 211 </span>              b.getAspectRatio(), (<span class="keyword">int</span>) b.getArcLength(), b.getCircularity()));
+<span class="lineno"> 212 </span>  }
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java</a>:147</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 144 </span>
+<span class="lineno"> 145 </span>        <span class="comment">// Display the Color Sensor result.</span>
+<span class="lineno"> 146 </span>        telemetry.addData(<span class="string">"Best Match"</span>, result.closestSwatch);
+<span class="caretline"><span class="lineno"> 147 </span>        telemetry.addLine(<span class="warning">String.format(<span class="string">"RGB   (%3d, %3d, %3d)"</span>,</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 148 </span>                                        result.RGB[<span class="number">0</span>], result.RGB[<span class="number">1</span>], result.RGB[<span class="number">2</span>]));
+<span class="lineno"> 149 </span>        telemetry.addLine(String.format(<span class="string">"HSV   (%3d, %3d, %3d)"</span>,
+<span class="lineno"> 150 </span>                                        result.HSV[<span class="number">0</span>], result.HSV[<span class="number">1</span>], result.HSV[<span class="number">2</span>]));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java</a>:149</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 146 </span>  telemetry.addData(<span class="string">"Best Match"</span>, result.closestSwatch);
+<span class="lineno"> 147 </span>  telemetry.addLine(String.format(<span class="string">"RGB   (%3d, %3d, %3d)"</span>,
+<span class="lineno"> 148 </span>                                  result.RGB[<span class="number">0</span>], result.RGB[<span class="number">1</span>], result.RGB[<span class="number">2</span>]));
+<span class="caretline"><span class="lineno"> 149 </span>  telemetry.addLine(<span class="warning">String.format(<span class="string">"HSV   (%3d, %3d, %3d)"</span>,</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 150 </span>                                  result.HSV[<span class="number">0</span>], result.HSV[<span class="number">1</span>], result.HSV[<span class="number">2</span>]));
+<span class="lineno"> 151 </span>  telemetry.addLine(String.format(<span class="string">"YCrCb (%3d, %3d, %3d)"</span>,
+<span class="lineno"> 152 </span>                                  result.YCrCb[<span class="number">0</span>], result.YCrCb[<span class="number">1</span>], result.YCrCb[<span class="number">2</span>]));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVisionColorSensor.java</a>:151</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 148 </span>                                  result.RGB[<span class="number">0</span>], result.RGB[<span class="number">1</span>], result.RGB[<span class="number">2</span>]));
+<span class="lineno"> 149 </span>  telemetry.addLine(String.format(<span class="string">"HSV   (%3d, %3d, %3d)"</span>,
+<span class="lineno"> 150 </span>                                  result.HSV[<span class="number">0</span>], result.HSV[<span class="number">1</span>], result.HSV[<span class="number">2</span>]));
+<span class="caretline"><span class="lineno"> 151 </span>  telemetry.addLine(<span class="warning">String.format(<span class="string">"YCrCb (%3d, %3d, %3d)"</span>,</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 152 </span>                                  result.YCrCb[<span class="number">0</span>], result.YCrCb[<span class="number">1</span>], result.YCrCb[<span class="number">2</span>]));
+<span class="lineno"> 153 </span>  telemetry.update();
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java</a>:72</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 69 </span>  <span class="keyword">while</span>(opModeIsActive()) {
+<span class="lineno"> 70 </span>      <span class="comment">// generic DistanceSensor methods.</span>
+<span class="lineno"> 71 </span>      telemetry.addData(<span class="string">"deviceName"</span>, sensorDistance.getDeviceName() );
+<span class="caretline"><span class="lineno"> 72 </span>      telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f mm"</span>, sensorDistance.getDistance(DistanceUnit.MM))</span>);</span>
+<span class="lineno"> 73 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorDistance.getDistance(DistanceUnit.CM)));
+<span class="lineno"> 74 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorDistance.getDistance(DistanceUnit.METER)));
+<span class="lineno"> 75 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorDistance.getDistance(DistanceUnit.INCH)));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java</a>:73</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 70 </span>  <span class="comment">// generic DistanceSensor methods.</span>
+<span class="lineno"> 71 </span>  telemetry.addData(<span class="string">"deviceName"</span>, sensorDistance.getDeviceName() );
+<span class="lineno"> 72 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorDistance.getDistance(DistanceUnit.MM)));
+<span class="caretline"><span class="lineno"> 73 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f cm"</span>, sensorDistance.getDistance(DistanceUnit.CM))</span>);</span>
+<span class="lineno"> 74 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorDistance.getDistance(DistanceUnit.METER)));
+<span class="lineno"> 75 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorDistance.getDistance(DistanceUnit.INCH)));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java</a>:74</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 71 </span>  telemetry.addData(<span class="string">"deviceName"</span>, sensorDistance.getDeviceName() );
+<span class="lineno"> 72 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorDistance.getDistance(DistanceUnit.MM)));
+<span class="lineno"> 73 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorDistance.getDistance(DistanceUnit.CM)));
+<span class="caretline"><span class="lineno"> 74 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f m"</span>, sensorDistance.getDistance(DistanceUnit.METER))</span>);</span>
+<span class="lineno"> 75 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorDistance.getDistance(DistanceUnit.INCH)));
+<span class="lineno"> 76 </span>
+<span class="lineno"> 77 </span>  <span class="comment">// AndyMarkTOF specific methods.</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorAndyMarkTOF.java</a>:75</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 72 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorDistance.getDistance(DistanceUnit.MM)));
+<span class="lineno"> 73 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorDistance.getDistance(DistanceUnit.CM)));
+<span class="lineno"> 74 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorDistance.getDistance(DistanceUnit.METER)));
+<span class="caretline"><span class="lineno"> 75 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f in"</span>, sensorDistance.getDistance(DistanceUnit.INCH))</span>);</span>
+<span class="lineno"> 76 </span>
+<span class="lineno"> 77 </span>  <span class="comment">// AndyMarkTOF specific methods.</span>
+<span class="lineno"> 78 </span>  telemetry.addData(<span class="string">"ID"</span>, String.format(<span class="string">"%x"</span>, sensorTimeOfFlight.getModelID()));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorKLNavxMicro.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorKLNavxMicro.java</a>:118</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 115 </span>    }
+<span class="lineno"> 116 </span>
+<span class="lineno"> 117 </span>    String formatRate(<span class="keyword">float</span> rate) {
+<span class="caretline"><span class="lineno"> 118 </span>        <span class="keyword">return</span> <span class="warning">String.format(<span class="string">"%.3f"</span>, rate)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 119 </span>    }
+<span class="lineno"> 120 </span>
+<span class="lineno"> 121 </span>    String formatAngle(AngleUnit angleUnit, <span class="keyword">double</span> angle) {
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorKLNavxMicro.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorKLNavxMicro.java</a>:126</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 123 </span>    }
+<span class="lineno"> 124 </span>
+<span class="lineno"> 125 </span>    String formatDegrees(<span class="keyword">double</span> degrees){
+<span class="caretline"><span class="lineno"> 126 </span>        <span class="keyword">return</span> <span class="warning">String.format(<span class="string">"%.1f"</span>, AngleUnit.DEGREES.normalize(degrees))</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 127 </span>    }
+<span class="lineno"> 128 </span>}
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java</a>:149</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 146 </span>  }
+<span class="lineno"> 147 </span>
+<span class="lineno"> 148 </span>  String formatRaw(<span class="keyword">int</span> rawValue) {
+<span class="caretline"><span class="lineno"> 149 </span>    <span class="keyword">return</span> <span class="warning">String.format(<span class="string">"%d"</span>, rawValue)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 150 </span>  }
+<span class="lineno"> 151 </span>
+<span class="lineno"> 152 </span>  String formatRate(<span class="keyword">float</span> rate) {
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java</a>:153</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 150 </span>  }
+<span class="lineno"> 151 </span>
+<span class="lineno"> 152 </span>  String formatRate(<span class="keyword">float</span> rate) {
+<span class="caretline"><span class="lineno"> 153 </span>    <span class="keyword">return</span> <span class="warning">String.format(<span class="string">"%.3f"</span>, rate)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 154 </span>  }
+<span class="lineno"> 155 </span>
+<span class="lineno"> 156 </span>  String formatFloat(<span class="keyword">float</span> rate) {
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRGyro.java</a>:157</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 154 </span>  }
+<span class="lineno"> 155 </span>
+<span class="lineno"> 156 </span>  String formatFloat(<span class="keyword">float</span> rate) {
+<span class="caretline"><span class="lineno"> 157 </span>    <span class="keyword">return</span> <span class="warning">String.format(<span class="string">"%.3f"</span>, rate)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 158 </span>  }
+<span class="lineno"> 159 </span>
+<span class="lineno"> 160 </span>}
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorOctoQuadLocalization.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorOctoQuadLocalization.java</a>:213</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 210 </span>  totalPackets++;
+<span class="lineno"> 211 </span>
+<span class="lineno"> 212 </span>  <span class="comment">// Print some statistics about CRC validation</span>
+<span class="caretline"><span class="lineno"> 213 </span>  telemetry.addLine(<span class="warning">String.format(<span class="string">"%d CRC error(s) in %d packets"</span>, badPackets, totalPackets)</span>);</span>
+<span class="lineno"> 214 </span>
+<span class="lineno"> 215 </span>  <span class="comment">// Send updated telemetry to the Driver Station</span>
+<span class="lineno"> 216 </span>  telemetry.update();
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java</a>:74</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 71 </span>  <span class="keyword">while</span>(opModeIsActive()) {
+<span class="lineno"> 72 </span>      <span class="comment">// generic DistanceSensor methods.</span>
+<span class="lineno"> 73 </span>      telemetry.addData(<span class="string">"deviceName"</span>, sensorDistance.getDeviceName() );
+<span class="caretline"><span class="lineno"> 74 </span>      telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f mm"</span>, sensorDistance.getDistance(DistanceUnit.MM))</span>);</span>
+<span class="lineno"> 75 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorDistance.getDistance(DistanceUnit.CM)));
+<span class="lineno"> 76 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorDistance.getDistance(DistanceUnit.METER)));
+<span class="lineno"> 77 </span>      telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorDistance.getDistance(DistanceUnit.INCH)));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java</a>:75</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 72 </span>  <span class="comment">// generic DistanceSensor methods.</span>
+<span class="lineno"> 73 </span>  telemetry.addData(<span class="string">"deviceName"</span>, sensorDistance.getDeviceName() );
+<span class="lineno"> 74 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorDistance.getDistance(DistanceUnit.MM)));
+<span class="caretline"><span class="lineno"> 75 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f cm"</span>, sensorDistance.getDistance(DistanceUnit.CM))</span>);</span>
+<span class="lineno"> 76 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorDistance.getDistance(DistanceUnit.METER)));
+<span class="lineno"> 77 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorDistance.getDistance(DistanceUnit.INCH)));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java</a>:76</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 73 </span>  telemetry.addData(<span class="string">"deviceName"</span>, sensorDistance.getDeviceName() );
+<span class="lineno"> 74 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorDistance.getDistance(DistanceUnit.MM)));
+<span class="lineno"> 75 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorDistance.getDistance(DistanceUnit.CM)));
+<span class="caretline"><span class="lineno"> 76 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f m"</span>, sensorDistance.getDistance(DistanceUnit.METER))</span>);</span>
+<span class="lineno"> 77 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f in"</span>, sensorDistance.getDistance(DistanceUnit.INCH)));
+<span class="lineno"> 78 </span>
+<span class="lineno"> 79 </span>  <span class="comment">// Rev2mDistanceSensor specific methods.</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorREV2mDistance.java</a>:77</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 74 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f mm"</span>, sensorDistance.getDistance(DistanceUnit.MM)));
+<span class="lineno"> 75 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f cm"</span>, sensorDistance.getDistance(DistanceUnit.CM)));
+<span class="lineno"> 76 </span>  telemetry.addData(<span class="string">"range"</span>, String.format(<span class="string">"%.01f m"</span>, sensorDistance.getDistance(DistanceUnit.METER)));
+<span class="caretline"><span class="lineno"> 77 </span>  telemetry.addData(<span class="string">"range"</span>, <span class="warning">String.format(<span class="string">"%.01f in"</span>, sensorDistance.getDistance(DistanceUnit.INCH))</span>);</span>
+<span class="lineno"> 78 </span>
+<span class="lineno"> 79 </span>  <span class="comment">// Rev2mDistanceSensor specific methods.</span>
+<span class="lineno"> 80 </span>  telemetry.addData(<span class="string">"ID"</span>, String.format(<span class="string">"%x"</span>, sensorTimeOfFlight.getModelID()));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorSparkFunOTOS.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorSparkFunOTOS.java</a>:152</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 149 </span>
+<span class="lineno"> 150 </span>      telemetry.addLine(<span class="string">"OTOS configured! Press start to get position data!"</span>);
+<span class="lineno"> 151 </span>      telemetry.addLine();
+<span class="caretline"><span class="lineno"> 152 </span>      telemetry.addLine(<span class="warning">String.format(<span class="string">"OTOS Hardware Version: v%d.%d"</span>, hwVersion.major, hwVersion.minor)</span>);</span>
+<span class="lineno"> 153 </span>      telemetry.addLine(String.format(<span class="string">"OTOS Firmware Version: v%d.%d"</span>, fwVersion.major, fwVersion.minor));
+<span class="lineno"> 154 </span>      telemetry.update();
+<span class="lineno"> 155 </span>  }
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorSparkFunOTOS.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorSparkFunOTOS.java</a>:153</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 150 </span>        telemetry.addLine(<span class="string">"OTOS configured! Press start to get position data!"</span>);
+<span class="lineno"> 151 </span>        telemetry.addLine();
+<span class="lineno"> 152 </span>        telemetry.addLine(String.format(<span class="string">"OTOS Hardware Version: v%d.%d"</span>, hwVersion.major, hwVersion.minor));
+<span class="caretline"><span class="lineno"> 153 </span>        telemetry.addLine(<span class="warning">String.format(<span class="string">"OTOS Firmware Version: v%d.%d"</span>, fwVersion.major, fwVersion.minor)</span>);</span>
+<span class="lineno"> 154 </span>        telemetry.update();
+<span class="lineno"> 155 </span>    }
+<span class="lineno"> 156 </span>}
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java</a>:133</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 130 </span>   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; OctoQuad.NUM_ENCODERS; i++)
+<span class="lineno"> 131 </span>   {
+<span class="lineno"> 132 </span>       optionsEncoderDirections[i] = <span class="keyword">new</span> TelemetryMenu.BooleanOption(
+<span class="caretline"><span class="lineno"> 133 </span>               <span class="warning">String.format(<span class="string">"Encoder %d direction"</span>, i)</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 134 </span>               octoquad.getSingleEncoderDirection(i) == OctoQuad.EncoderDirection.REVERSE,
+<span class="lineno"> 135 </span>               <span class="string">"-"</span>,
+<span class="lineno"> 136 </span>               <span class="string">"+"</span>);
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java</a>:143</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 140 </span>        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; OctoQuad.NUM_ENCODERS; i++)
+<span class="lineno"> 141 </span>        {
+<span class="lineno"> 142 </span>            optionsVelocityIntervals[i] = <span class="keyword">new</span> TelemetryMenu.IntegerOption(
+<span class="caretline"><span class="lineno"> 143 </span>                    <span class="warning">String.format(<span class="string">"Chan %d velocity intvl"</span>, i)</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 144 </span>                    OctoQuad.MIN_VELOCITY_MEASUREMENT_INTERVAL_MS,
+<span class="lineno"> 145 </span>                    OctoQuad.MAX_VELOCITY_MEASUREMENT_INTERVAL_MS,
+<span class="lineno"> 146 </span>                    octoquad.getSingleVelocitySampleInterval(i));
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java</a>:155</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 152 </span>  OctoQuad.ChannelPulseWidthParams params = octoquad.getSingleChannelPulseWidthParams(i);
+<span class="lineno"> 153 </span>
+<span class="lineno"> 154 </span>  optionsAbsParamsMax[i] = <span class="keyword">new</span> TelemetryMenu.IntegerOption(
+<span class="caretline"><span class="lineno"> 155 </span>          <span class="warning">String.format(<span class="string">"Chan %d max pulse length"</span>, i)</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 156 </span>          OctoQuad.MIN_PULSE_WIDTH_US,
+<span class="lineno"> 157 </span>          OctoQuad.MAX_PULSE_WIDTH_US,
+<span class="lineno"> 158 </span>          params.max_length_us);
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/UtilityOctoQuadConfigMenu.java</a>:161</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 158 </span>                    params.max_length_us);
+<span class="lineno"> 159 </span>
+<span class="lineno"> 160 </span>            optionsAbsParamsMin[i] = <span class="keyword">new</span> TelemetryMenu.IntegerOption(
+<span class="caretline"><span class="lineno"> 161 </span>                    <span class="warning">String.format(<span class="string">"Chan %d min pulse length"</span>, i)</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 162 </span>                    OctoQuad.MIN_PULSE_WIDTH_US,
+<span class="lineno"> 163 </span>                    OctoQuad.MAX_PULSE_WIDTH_US,
+<span class="lineno"> 164 </span>                    params.min_length_us);
+</pre>
+
+<br/><b>NOTE: 2 results omitted.</b><br/><br/></div>
+</div>
+<div class="metadata"><div class="explanation" id="explanationDefaultLocale" style="display: none;">
+Calling <code>String#toLowerCase()</code> or <code>#toUpperCase()</code> <b>without specifying an explicit locale</b> is a common source of bugs. The reason for that is that those methods will use the current locale on the user's device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for <code>i</code> is <b>not</b> <code>I</code>.<br/>
+<br/>
+If you want the methods to just perform ASCII replacement, for example to convert an enum name, call <code>String#toUpperCase(Locale.ROOT)</code> instead. If you really want to use the current locale, call <code>String#toUpperCase(Locale.getDefault())</code> instead.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/reference/java/util/Locale.html#default_locale">https://developer.android.com/reference/java/util/Locale.html#default_locale</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "DefaultLocale" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">DefaultLocale</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationDefaultLocaleLink" onclick="reveal('explanationDefaultLocale');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="DefaultLocaleCardLink" onclick="hideid('DefaultLocaleCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="SdCardPath"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SdCardPathCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Hardcoded reference to /sdcard</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java</a>:69</span>: <span class="message">Do not hardcode "/sdcard/"; use <code>Environment.getExternalStorageDirectory().getPath()</code> instead</span><br /><pre class="errorlines">
+<span class="lineno">  66 </span>
+<span class="lineno">  67 </span>    <span class="comment">// Point to sound files on the phone's drive</span>
+<span class="lineno">  68 </span>    <span class="keyword">private</span> String soundPath = <span class="string">"/FIRST/blocks/sounds"</span>;
+<span class="caretline"><span class="lineno">  69 </span>    <span class="keyword">private</span> File goldFile   = <span class="keyword">new</span> File(<span class="warning"><span class="string">"/sdcard"</span></span> + soundPath + <span class="string">"/gold.wav"</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  70 </span>    <span class="keyword">private</span> File silverFile = <span class="keyword">new</span> File(<span class="string">"/sdcard"</span> + soundPath + <span class="string">"/silver.wav"</span>);
+<span class="lineno">  71 </span>
+<span class="lineno">  72 </span>    <span class="comment">// Declare OpMode members.</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java</a>:70</span>: <span class="message">Do not hardcode "/sdcard/"; use <code>Environment.getExternalStorageDirectory().getPath()</code> instead</span><br /><pre class="errorlines">
+<span class="lineno">  67 </span>    <span class="comment">// Point to sound files on the phone's drive</span>
+<span class="lineno">  68 </span>    <span class="keyword">private</span> String soundPath = <span class="string">"/FIRST/blocks/sounds"</span>;
+<span class="lineno">  69 </span>    <span class="keyword">private</span> File goldFile   = <span class="keyword">new</span> File(<span class="string">"/sdcard"</span> + soundPath + <span class="string">"/gold.wav"</span>);
+<span class="caretline"><span class="lineno">  70 </span>    <span class="keyword">private</span> File silverFile = <span class="keyword">new</span> File(<span class="warning"><span class="string">"/sdcard"</span></span> + soundPath + <span class="string">"/silver.wav"</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  71 </span>
+<span class="lineno">  72 </span>    <span class="comment">// Declare OpMode members.</span>
+<span class="lineno">  73 </span>    <span class="keyword">private</span> <span class="keyword">boolean</span> isX = <span class="keyword">false</span>;    <span class="comment">// Gamepad button state variables</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationSdCardPath" style="display: none;">
+Your code should not reference the <code>/sdcard</code> path directly; instead use <code>Environment.getExternalStorageDirectory().getPath()</code>.<br/>
+<br/>
+Similarly, do not reference the <code>/data/data/</code> path directly; it can vary in multi-user scenarios. Instead, use <code>Context.getFilesDir().getPath()</code>.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/training/data-storage#filesExternal">https://developer.android.com/training/data-storage#filesExternal</a>
+</div>To suppress this error, use the issue id "SdCardPath" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">SdCardPath</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSdCardPathLink" onclick="reveal('explanationSdCardPath');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SdCardPathCardLink" onclick="hideid('SdCardPathCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="RedundantLabel"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="RedundantLabelCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Redundant label on activity</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:26</span>: <span class="message">Redundant label can be removed</span><br /><pre class="errorlines">
+<span class="lineno"> 23 </span>  <span class="tag">&lt;activity</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"org.firstinspires.ftc.robotcontroller.internal.PermissionValidatorWrapper"</span>
+<span class="lineno"> 24 </span>            <span class="prefix">android:</span><span class="attribute">screenOrientation</span>=<span class="value">"fullUser"</span>
+<span class="lineno"> 25 </span>            <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span>
+<span class="caretline"><span class="lineno"> 26 </span>            <span class="warning"><span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 27 </span>            <span class="prefix">android:</span><span class="attribute">launchMode</span>=<span class="value">"singleTask"</span> >
+<span class="lineno"> 28 </span>
+<span class="lineno"> 29 </span>    <span class="tag">&lt;intent-filter></span></pre>
+
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:40</span>: <span class="message">Redundant label can be removed</span><br /><pre class="errorlines">
+<span class="lineno"> 37 </span><span class="attribute">    </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity"</span>
+<span class="lineno"> 38 </span>    <span class="prefix">android:</span><span class="attribute">screenOrientation</span>=<span class="value">"fullUser"</span>
+<span class="lineno"> 39 </span>    <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span>
+<span class="caretline"><span class="lineno"> 40 </span>    <span class="warning"><span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 41 </span>    <span class="prefix">android:</span><span class="attribute">launchMode</span>=<span class="value">"singleTask"</span> >
+<span class="lineno"> 42 </span>
+<span class="lineno"> 43 </span>    <span class="tag">&lt;intent-filter></span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationRedundantLabel" style="display: none;">
+When an activity does not have a label attribute, it will use the one from the application tag. Since the application has already specified the same label, the label on this activity can be omitted.<br/>To suppress this error, use the issue id "RedundantLabel" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">RedundantLabel</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 5/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationRedundantLabelLink" onclick="reveal('explanationRedundantLabel');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="RedundantLabelCardLink" onclick="hideid('RedundantLabelCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="DiscouragedApi"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="DiscouragedApiCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Using discouraged APIs</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:24</span>: <span class="message">Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed.</span><br /><pre class="errorlines">
+<span class="lineno"> 21 </span>
+<span class="lineno"> 22 </span>  <span class="comment">&lt;!-- The main robot controller activity --></span>
+<span class="lineno"> 23 </span>  <span class="tag">&lt;activity</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"org.firstinspires.ftc.robotcontroller.internal.PermissionValidatorWrapper"</span>
+<span class="caretline"><span class="lineno"> 24 </span>            <span class="warning"><span class="prefix">android:</span><span class="attribute">screenOrientation</span>=<span class="value">"fullUser"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 25 </span>            <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span>
+<span class="lineno"> 26 </span>            <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span>
+<span class="lineno"> 27 </span>            <span class="prefix">android:</span><span class="attribute">launchMode</span>=<span class="value">"singleTask"</span> >
+</pre>
+
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:38</span>: <span class="message">Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed.</span><br /><pre class="errorlines">
+<span class="lineno"> 35 </span>
+<span class="lineno"> 36 </span>    <span class="tag">&lt;activity</span><span class="attribute">
+</span><span class="lineno"> 37 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity"</span>
+<span class="caretline"><span class="lineno"> 38 </span>      <span class="warning"><span class="prefix">android:</span><span class="attribute">screenOrientation</span>=<span class="value">"fullUser"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 39 </span>      <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span>
+<span class="lineno"> 40 </span>      <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span>
+<span class="lineno"> 41 </span>      <span class="prefix">android:</span><span class="attribute">launchMode</span>=<span class="value">"singleTask"</span> >
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsASJava.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsASJava.java</a>:88</span>: <span class="message">Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. <code>R.foo.bar</code>) than by name (e.g. <code>getIdentifier("bar", "foo", null)</code>).</span><br /><pre class="errorlines">
+<span class="lineno">  85 </span>  <span class="keyword">public</span> <span class="keyword">void</span> runOpMode() {
+<span class="lineno">  86 </span>
+<span class="lineno">  87 </span>      <span class="comment">// Determine Resource IDs for sounds built into the RC application.</span>
+<span class="caretline"><span class="lineno">  88 </span>      <span class="keyword">int</span> silverSoundID = hardwareMap.appContext.getResources().<span class="warning">getIdentifier</span>(<span class="string">"silver"</span>, <span class="string">"raw"</span>, hardwareMap.appContext.getPackageName());</span>
+<span class="lineno">  89 </span>      <span class="keyword">int</span> goldSoundID   = hardwareMap.appContext.getResources().getIdentifier(<span class="string">"gold"</span>,   <span class="string">"raw"</span>, hardwareMap.appContext.getPackageName());
+<span class="lineno">  90 </span>
+<span class="lineno">  91 </span>      <span class="comment">// Determine if sound resources are found.</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsASJava.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsASJava.java</a>:89</span>: <span class="message">Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. <code>R.foo.bar</code>) than by name (e.g. <code>getIdentifier("bar", "foo", null)</code>).</span><br /><pre class="errorlines">
+<span class="lineno">  86 </span>
+<span class="lineno">  87 </span>  <span class="comment">// Determine Resource IDs for sounds built into the RC application.</span>
+<span class="lineno">  88 </span>  <span class="keyword">int</span> silverSoundID = hardwareMap.appContext.getResources().getIdentifier(<span class="string">"silver"</span>, <span class="string">"raw"</span>, hardwareMap.appContext.getPackageName());
+<span class="caretline"><span class="lineno">  89 </span>  <span class="keyword">int</span> goldSoundID   = hardwareMap.appContext.getResources().<span class="warning">getIdentifier</span>(<span class="string">"gold"</span>,   <span class="string">"raw"</span>, hardwareMap.appContext.getPackageName());</span>
+<span class="lineno">  90 </span>
+<span class="lineno">  91 </span>  <span class="comment">// Determine if sound resources are found.</span>
+<span class="lineno">  92 </span>  <span class="comment">// Note: Preloading is NOT required, but it's a good way to verify all your sounds are available before you run.</span></pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsSKYSTONE.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsSKYSTONE.java</a>:95</span>: <span class="message">Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. <code>R.foo.bar</code>) than by name (e.g. <code>getIdentifier("bar", "foo", null)</code>).</span><br /><pre class="errorlines">
+<span class="lineno">  92 </span>  <span class="keyword">if</span> (gamepad1.right_bumper &amp;&amp; !soundPlaying) {
+<span class="lineno">  93 </span>
+<span class="lineno">  94 </span>      <span class="comment">// Determine Resource IDs for the sounds you want to play, and make sure it's valid.</span>
+<span class="caretline"><span class="lineno">  95 </span>      <span class="keyword">if</span> ((soundID = myApp.getResources().<span class="warning">getIdentifier</span>(sounds[soundIndex], <span class="string">"raw"</span>, myApp.getPackageName())) != <span class="number">0</span>){</span>
+<span class="lineno">  96 </span>
+<span class="lineno">  97 </span>          <span class="comment">// Signal that the sound is now playing.</span>
+<span class="lineno">  98 </span>          soundPlaying = <span class="keyword">true</span>;
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorColor.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorColor.java</a>:97</span>: <span class="message">Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. <code>R.foo.bar</code>) than by name (e.g. <code>getIdentifier("bar", "foo", null)</code>).</span><br /><pre class="errorlines">
+<span class="lineno">  94 </span>
+<span class="lineno">  95 </span>  <span class="comment">// Get a reference to the RelativeLayout so we can later change the background</span>
+<span class="lineno">  96 </span>  <span class="comment">// color of the Robot Controller app to match the hue detected by the RGB sensor.</span>
+<span class="caretline"><span class="lineno">  97 </span>  <span class="keyword">int</span> relativeLayoutId = hardwareMap.appContext.getResources().<span class="warning">getIdentifier</span>(<span class="string">"RelativeLayout"</span>, <span class="string">"id"</span>, hardwareMap.appContext.getPackageName());</span>
+<span class="lineno">  98 </span>  relativeLayout = ((Activity) hardwareMap.appContext).findViewById(relativeLayoutId);
+<span class="lineno">  99 </span>
+<span class="lineno"> 100 </span>  <span class="keyword">try</span> {
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRColor.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/SensorMRColor.java</a>:71</span>: <span class="message">Use of this function is discouraged because resource reflection makes it harder to perform build optimizations and compile-time verification of code. It is much more efficient to retrieve resources by identifier (e.g. <code>R.foo.bar</code>) than by name (e.g. <code>getIdentifier("bar", "foo", null)</code>).</span><br /><pre class="errorlines">
+<span class="lineno">  68 </span>
+<span class="lineno">  69 </span>  <span class="comment">// get a reference to the RelativeLayout so we can change the background</span>
+<span class="lineno">  70 </span>  <span class="comment">// color of the Robot Controller app to match the hue detected by the RGB sensor.</span>
+<span class="caretline"><span class="lineno">  71 </span>  <span class="keyword">int</span> relativeLayoutId = hardwareMap.appContext.getResources().<span class="warning">getIdentifier</span>(<span class="string">"RelativeLayout"</span>, <span class="string">"id"</span>, hardwareMap.appContext.getPackageName());</span>
+<span class="lineno">  72 </span>  <span class="keyword">final</span> View relativeLayout = ((Activity) hardwareMap.appContext).findViewById(relativeLayoutId);
+<span class="lineno">  73 </span>
+<span class="lineno">  74 </span>  <span class="comment">// bPrevState and bCurrState represent the previous and current state of the button.</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationDiscouragedApi" style="display: none;">
+Discouraged APIs are allowed and are not deprecated, but they may be unfit for common use (e.g. due to slow performance or subtle behavior).<br/>To suppress this error, use the issue id "DiscouragedApi" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">DiscouragedApi</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 2/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationDiscouragedApiLink" onclick="reveal('explanationDiscouragedApi');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="DiscouragedApiCardLink" onclick="hideid('DiscouragedApiCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Security"></a>
+<a name="IntentFilterExportedReceiver"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="IntentFilterExportedReceiverCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Unspecified android:exported in manifest</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:23</span>: <span class="message">As of Android 12, <code>android:exported</code> must be set; use <code>true</code> to make the activity available to other apps, and <code>false</code> otherwise. For launcher activities, this should be set to <code>true</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 20 </span>      <span class="prefix">android:</span><span class="attribute">value</span>=<span class="value">"1"</span> />
+<span class="lineno"> 21 </span>
+<span class="lineno"> 22 </span>  <span class="comment">&lt;!-- The main robot controller activity --></span>
+<span class="caretline"><span class="lineno"> 23 </span>  <span class="tag">&lt;</span><span class="warning"><span class="tag">activity</span></span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"org.firstinspires.ftc.robotcontroller.internal.PermissionValidatorWrapper"</span></span>
+<span class="lineno"> 24 </span>            <span class="prefix">android:</span><span class="attribute">screenOrientation</span>=<span class="value">"fullUser"</span>
+<span class="lineno"> 25 </span>            <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span>
+<span class="lineno"> 26 </span>            <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></pre>
+
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:36</span>: <span class="message">As of Android 12, <code>android:exported</code> must be set; use <code>true</code> to make the activity available to other apps, and <code>false</code> otherwise.</span><br /><pre class="errorlines">
+<span class="lineno"> 33 </span>
+<span class="lineno"> 34 </span>    <span class="tag">&lt;/activity></span>
+<span class="lineno"> 35 </span>
+<span class="caretline"><span class="lineno"> 36 </span>    <span class="tag">&lt;</span><span class="warning"><span class="tag">activity</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno"> 37 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity"</span>
+<span class="lineno"> 38 </span>      <span class="prefix">android:</span><span class="attribute">screenOrientation</span>=<span class="value">"fullUser"</span>
+<span class="lineno"> 39 </span>      <span class="prefix">android:</span><span class="attribute">configChanges</span>=<span class="value">"orientation|screenSize"</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationIntentFilterExportedReceiver" style="display: none;">
+Apps targeting Android 12 and higher are required to specify an explicit value for <code>android:exported</code> when the corresponding component has an intent filter defined. Otherwise, installation will fail. Set it to <code>true</code> to make this activity accessible to other apps, and <code>false</code> to limit it to be used only by this app or the OS. For launch activities, this should be set to true; otherwise, the app will fail to launch.<br/>
+<br/>
+Previously, <code>android:exported</code> for components without any intent filters present used to default to <code>false</code>, and when intent filters were present, the default was <code>true</code>. Defaults which change value based on other values are confusing and lead to apps accidentally exporting components as a side-effect of adding intent filters. This is a security risk, and we have made this change to avoid introducing accidental vulnerabilities.<br/>
+<br/>
+While the default without intent filters remains unchanged, it is now required to explicitly specify a value when intent filters are present. Any app failing to meet this requirement will fail to install on any Android version after Android 11.<br/>
+<br/>
+We recommend setting <code>android:exported</code> to false (even on previous versions of Android prior to this requirement) unless you have a good reason to export a particular component.<br/><div class="moreinfo">More info: <a href="https://goo.gle/IntentFilterExportedReceiver">https://goo.gle/IntentFilterExportedReceiver</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "IntentFilterExportedReceiver" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">IntentFilterExportedReceiver</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Security</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 5/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationIntentFilterExportedReceiverLink" onclick="reveal('explanationIntentFilterExportedReceiver');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="IntentFilterExportedReceiverCardLink" onclick="hideid('IntentFilterExportedReceiverCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Performance"></a>
+<a name="ObsoleteSdkInt"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ObsoleteSdkIntCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Obsolete SDK_INT Version Check</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java</a>:599</span>: <span class="message">Unnecessary; SDK_INT is always >= 24</span><br /><pre class="errorlines">
+<span class="lineno"> 596 </span>      finishAffinity();
+<span class="lineno"> 597 </span>
+<span class="lineno"> 598 </span>      <span class="comment">//For lollipop and up, we can clear ourselves from the recents list too</span>
+<span class="caretline"><span class="lineno"> 599 </span>      <span class="keyword">if</span> (<span class="warning">android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP</span>) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 600 </span>        ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+<span class="lineno"> 601 </span>        List&lt;ActivityManager.AppTask> tasks = manager.getAppTasks();
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationObsoleteSdkInt" style="display: none;">
+This check flags version checks that are not necessary, because the <code>minSdkVersion</code> (or surrounding known API level) is already at least as high as the version checked for.<br/>
+<br/>
+Similarly, it also looks for resources in <code>-vNN</code> folders, such as <code>values-v14</code> where the version qualifier is less than or equal to the <code>minSdkVersion</code>, where the contents should be merged into the best folder.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "ObsoleteSdkInt" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ObsoleteSdkInt</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Performance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationObsoleteSdkIntLink" onclick="reveal('explanationObsoleteSdkInt');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ObsoleteSdkIntCardLink" onclick="hideid('ObsoleteSdkIntCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Usability:Icons"></a>
+<a name="IconMissingDensityFolder"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="IconMissingDensityFolderCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Missing density folder</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res">../../src/main/res</a></span>: <span class="message">Missing density variation folders in <code>src/main/res</code>: drawable-hdpi, drawable-mdpi, drawable-xxhdpi</span><br />
+</div>
+<div class="metadata"><div class="explanation" id="explanationIconMissingDensityFolder" style="display: none;">
+Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra-high, extra-extra-high). This lint check identifies folders which are missing, such as <code>drawable-hdpi</code>.<br/>
+<br/>
+Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable <code>ANDROID_LINT_INCLUDE_LDPI=true</code>. For more information on current density usage, see <a href="https://developer.android.com/about/dashboards">https://developer.android.com/about/dashboards</a><br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/practices/screens_support.html">https://developer.android.com/guide/practices/screens_support.html</a>
+</div>To suppress this error, use the issue id "IconMissingDensityFolder" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">IconMissingDensityFolder</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Icons</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Usability</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationIconMissingDensityFolderLink" onclick="reveal('explanationIconMissingDensityFolder');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="IconMissingDensityFolderCardLink" onclick="hideid('IconMissingDensityFolderCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Accessibility"></a>
+<a name="ClickableViewAccessibility"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ClickableViewAccessibilityCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Accessibility in Custom Views</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java</a>:433</span>: <span class="message">Custom view `<code>LinearLayout</code>` has <code>setOnTouchListener</code> called on it but does not override <code>performClick</code></span><br /><pre class="errorlines">
+<span class="lineno"> 430 </span>    <span class="keyword">super</span>.onStart();
+<span class="lineno"> 431 </span>    RobotLog.vv(TAG, <span class="string">"onStart()"</span>);
+<span class="lineno"> 432 </span>
+<span class="caretline"><span class="lineno"> 433 </span>    <span class="warning">entireScreenLayout.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 434 </span>      <span class="annotation">@Override</span>
+<span class="lineno"> 435 </span>      <span class="keyword">public</span> <span class="keyword">boolean</span> onTouch(View v, MotionEvent event) {
+<span class="lineno"> 436 </span>        dimmer.handleDimTimer();
+</pre>
+
+<span class="location"><a href="../../src/main/java/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java">../../src/main/java/org/firstinspires/ftc/robotcontroller/internal/FtcRobotControllerActivity.java</a>:435</span>: <span class="message"><code>onTouch</code> should call <code>View#performClick</code> when a click is detected</span><br /><pre class="errorlines">
+<span class="lineno"> 432 </span>
+<span class="lineno"> 433 </span>    entireScreenLayout.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
+<span class="lineno"> 434 </span>      <span class="annotation">@Override</span>
+<span class="caretline"><span class="lineno"> 435 </span>      <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="warning">onTouch</span>(View v, MotionEvent event) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 436 </span>        dimmer.handleDimTimer();
+<span class="lineno"> 437 </span>        <span class="keyword">return</span> <span class="keyword">false</span>;
+<span class="lineno"> 438 </span>      }
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationClickableViewAccessibility" style="display: none;">
+If a <code>View</code> that overrides <code>onTouchEvent</code> or uses an <code>OnTouchListener</code> does not also implement <code>performClick</code> and call it when clicks are detected, the <code>View</code> may not handle accessibility actions properly. Logic handling the click actions should ideally be placed in <code>View#performClick</code> as some accessibility services invoke <code>performClick</code> when a click action should occur.<br/>To suppress this error, use the issue id "ClickableViewAccessibility" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ClickableViewAccessibility</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Accessibility</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationClickableViewAccessibilityLink" onclick="reveal('explanationClickableViewAccessibility');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ClickableViewAccessibilityCardLink" onclick="hideid('ClickableViewAccessibilityCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="ContentDescription"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ContentDescriptionCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Image without contentDescription</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_ftc_controller.xml">../../src/main/res/layout/activity_ftc_controller.xml</a>:51</span>: <span class="message">Missing <code>contentDescription</code> attribute on image</span><br /><pre class="errorlines">
+<span class="lineno">  48 </span>    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"80dp"</span>
+<span class="lineno">  49 </span>    <span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@color/background_black"</span>>
+<span class="lineno">  50 </span>
+<span class="caretline"><span class="lineno">  51 </span>    <span class="tag">&lt;</span><span class="warning"><span class="tag">ImageView</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno">  52 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/robotIcon"</span>
+<span class="lineno">  53 </span>      <span class="prefix">android:</span><span class="attribute">src</span>=<span class="value">"@drawable/icon_robotcontroller"</span>
+<span class="lineno">  54 </span>      <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span></pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_ftc_controller.xml">../../src/main/res/layout/activity_ftc_controller.xml</a>:69</span>: <span class="message">Missing <code>contentDescription</code> attribute on image</span><br /><pre class="errorlines">
+<span class="lineno">  66 </span>      <span class="prefix">android:</span><span class="attribute">padding</span>=<span class="value">"8dp"</span>
+<span class="lineno">  67 </span>      <span class="prefix">android:</span><span class="attribute">textStyle</span>=<span class="value">"bold"</span>/>
+<span class="lineno">  68 </span>
+<span class="caretline"><span class="lineno">  69 </span>    <span class="tag">&lt;</span><span class="warning"><span class="tag">ImageButton</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno">  70 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/menu_buttons"</span>
+<span class="lineno">  71 </span>      <span class="prefix">android:</span><span class="attribute">scaleType</span>=<span class="value">"fitXY"</span>
+<span class="lineno">  72 </span>      <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationContentDescription" style="display: none;">
+Non-textual widgets like ImageViews and ImageButtons should use the <code>contentDescription</code> attribute to specify a textual description of the widget such that screen readers and other accessibility tools can adequately describe the user interface.<br/>
+<br/>
+Note that elements in application screens that are purely decorative and do not provide any content or enable a user action should not have accessibility content descriptions. In this case, set their descriptions to <code>@null</code>. If your app's minSdkVersion is 16 or higher, you can instead set these graphical elements' <code>android:importantForAccessibility</code> attributes to <code>no</code>.<br/>
+<br/>
+Note that for text fields, you should not set both the <code>hint</code> and the <code>contentDescription</code> attributes since the hint will never be shown. Just set the <code>hint</code>.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases">https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "ContentDescription" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ContentDescription</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Accessibility</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationContentDescriptionLink" onclick="reveal('explanationContentDescription');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ContentDescriptionCardLink" onclick="hideid('ContentDescriptionCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Internationalization"></a>
+<a name="RelativeOverlap"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="RelativeOverlapCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Overlapping items in RelativeLayout</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_ftc_controller.xml">../../src/main/res/layout/activity_ftc_controller.xml</a>:59</span>: <span class="message"><code>@id/textDeviceName</code> can overlap <code>@id/menu_buttons</code> if @id/textDeviceName grows due to localized text expansion</span><br /><pre class="errorlines">
+<span class="lineno">  56 </span>      <span class="prefix">android:</span><span class="attribute">adjustViewBounds</span>=<span class="value">"true"</span>
+<span class="lineno">  57 </span>      <span class="prefix">android:</span><span class="attribute">layout_margin</span>=<span class="value">"1dp"</span>/>
+<span class="lineno">  58 </span>
+<span class="caretline"><span class="lineno">  59 </span>    <span class="tag">&lt;</span><span class="warning"><span class="tag">TextView</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno">  60 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/textDeviceName"</span>
+<span class="lineno">  61 </span>      <span class="prefix">android:</span><span class="attribute">layout_toEndOf</span>=<span class="value">"@id/robotIcon"</span>
+<span class="lineno">  62 </span>      <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationRelativeOverlap" style="display: none;">
+If relative layout has text or button items aligned to left and right sides they can overlap each other due to localized text expansion unless they have mutual constraints like <code>toEndOf</code>/<code>toStartOf</code>.<br/>To suppress this error, use the issue id "RelativeOverlap" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">RelativeOverlap</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Internationalization</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationRelativeOverlapLink" onclick="reveal('explanationRelativeOverlap');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="RelativeOverlapCardLink" onclick="hideid('RelativeOverlapCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="ExtraIssues"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ExtraIssuesCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Included Additional Checks</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+This card lists all the extra checks run by lint, provided from libraries,
+build configuration and extra flags. This is included to help you verify
+whether a particular check is included in analysis when configuring builds.
+(Note that the list does not include the hundreds of built-in checks into lint,
+only additional ones.)
+<div id="IncludedIssues" style="display: none;"><br/><br/><div class="issue">
+<div class="id">EnsureInitializerMetadata<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+When a library defines a Initializer, it needs to be accompanied by a corresponding &lt;meta-data> entry in the AndroidManifest.xml file.<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.startup<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=823348">https://issuetracker.google.com/issues/new?component=823348</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">EnsureInitializerNoArgConstr<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Every <code>Initializer</code> must have a no argument constructor.<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.startup<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=823348">https://issuetracker.google.com/issues/new?component=823348</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ExperimentalAnnotationRetention<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Experimental annotations defined in Java source should use default (<code>CLASS</code>) retention, while Kotlin-sourced annotations should use <code>BINARY</code> retention.<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.annotation.experimental<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=459778">https://issuetracker.google.com/issues/new?component=459778</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">FragmentBackPressedCallback<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+The Fragment lifecycle can result in a Fragment being active                 longer than its view. This can lead to unexpected behavior from lifecycle aware                 objects remaining active longer than the Fragment's view. To solve this issue,                 getViewLifecycleOwner() should be used as a LifecycleOwner rather than the                 Fragment instance once it is safe to access the view lifecycle in a                 Fragment's onCreateView, onViewCreated, onActivityCreated, or                 onViewStateRestored methods.<br/><div class="vendor">
+Vendor: Android Open Source Project (androidx.fragment.lint.fragment)<br/>
+Identifier: androidx.fragment.lint.fragment<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=192731">https://issuetracker.google.com/issues/new?component=192731</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">FragmentLiveDataObserve<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+When observing a LiveData object from a fragment's onCreateView,                 onViewCreated, onActivityCreated, or onViewStateRestored method                 getViewLifecycleOwner() should be used as the LifecycleOwner rather than the                 Fragment instance. The Fragment lifecycle can result in the Fragment being                 active longer than its view. This can lead to unexpected behavior from                 LiveData objects being observed longer than the Fragment's view is active.<br/><div class="vendor">
+Vendor: Android Open Source Project (androidx.fragment.lint.fragment)<br/>
+Identifier: androidx.fragment.lint.fragment<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=192731">https://issuetracker.google.com/issues/new?component=192731</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">FragmentTagUsage<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+FragmentContainerView replaces the &lt;fragment> tag as the preferred                 way of adding fragments via XML. Unlike the &lt;fragment> tag, FragmentContainerView                 uses a normal <code>FragmentTransaction</code> under the hood to add the initial fragment,                 allowing further FragmentTransaction operations on the FragmentContainerView                 and providing a consistent timing for lifecycle events.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/reference/androidx/fragment/app/FragmentContainerView.html">https://developer.android.com/reference/androidx/fragment/app/FragmentContainerView.html</a>
+</div><div class="vendor">
+Vendor: Android Open Source Project (androidx.fragment.lint.fragment)<br/>
+Identifier: androidx.fragment.lint.fragment<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=192731">https://issuetracker.google.com/issues/new?component=192731</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">InvalidFragmentVersionForActivityResult<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+In order to use the ActivityResult APIs you must upgrade your                 Fragment version to 1.3.0. Previous versions of FragmentActivity                 failed to call super.onRequestPermissionsResult() and used invalid request codes<br/><div class="moreinfo">More info: <a href="https://developer.android.com/training/permissions/requesting#make-the-request">https://developer.android.com/training/permissions/requesting#make-the-request</a>
+</div><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.activity<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=527362">https://issuetracker.google.com/issues/new?component=527362</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnsafeOptInUsageError<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+This API has been flagged as opt-in with error-level severity.<br/>
+<br/>
+Any declaration annotated with this marker is considered part of an unstable or<br/>
+otherwise non-standard API surface and its call sites should accept the opt-in<br/>
+aspect of it by using the <code>@OptIn</code> annotation, using the marker annotation --<br/>
+effectively causing further propagation of the opt-in aspect -- or configuring<br/>
+the <code>UnsafeOptInUsageError</code> check's options for project-wide opt-in.<br/>
+<br/>
+To configure project-wide opt-in, specify the <code>opt-in</code> option value in <code>lint.xml</code><br/>
+as a comma-delimited list of opted-in annotations:<br/>
+
+<pre>
+&lt;lint>
+    &lt;issue id="UnsafeOptInUsageError">
+        &lt;option name="opt-in" value="com.foo.ExperimentalBarAnnotation" />
+    &lt;/issue>
+&lt;/lint>
+</pre>
+<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.annotation.experimental<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=459778">https://issuetracker.google.com/issues/new?component=459778</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnsafeOptInUsageWarning<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+This API has been flagged as opt-in with warning-level severity.<br/>
+<br/>
+Any declaration annotated with this marker is considered part of an unstable or<br/>
+otherwise non-standard API surface and its call sites should accept the opt-in<br/>
+aspect of it by using the <code>@OptIn</code> annotation, using the marker annotation --<br/>
+effectively causing further propagation of the opt-in aspect -- or configuring<br/>
+the <code>UnsafeOptInUsageWarning</code> check's options for project-wide opt-in.<br/>
+<br/>
+To configure project-wide opt-in, specify the <code>opt-in</code> option value in <code>lint.xml</code><br/>
+as a comma-delimited list of opted-in annotations:<br/>
+
+<pre>
+&lt;lint>
+    &lt;issue id="UnsafeOptInUsageWarning">
+        &lt;option name="opt-in" value="com.foo.ExperimentalBarAnnotation" />
+    &lt;/issue>
+&lt;/lint>
+</pre>
+<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.annotation.experimental<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=459778">https://issuetracker.google.com/issues/new?component=459778</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseAndroidAlpha<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+<code>ColorStateList</code> uses app:alpha without <code>android:alpha</code><br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseAppTint<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+<code>ImageView</code> or <code>ImageButton</code> uses <code>android:tint</code> instead of <code>app:tint</code><br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseCompatLoadingForColorStateLists<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Use Compat loading of color state lists<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseCompatLoadingForDrawables<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Use Compat loading of drawables<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseCompatTextViewDrawableApis<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Use Compat loading of compound text view drawables<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseCompatTextViewDrawableXml<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+<code>TextView</code> uses <code>android:</code> compound drawable attributes instead of <code>app:</code> ones<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseRequireInsteadOfGet<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+AndroidX added new "require____()" versions of common "get___()" APIs, such as getContext/getActivity/getArguments/etc. Rather than wrap these in something like requireNotNull(), using these APIs will allow the underlying component to try to tell you _why_ it was null, and thus yield a better error message.<br/><div class="vendor">
+Vendor: Android Open Source Project (androidx.fragment.lint.fragment)<br/>
+Identifier: androidx.fragment.lint.fragment<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=192731">https://issuetracker.google.com/issues/new?component=192731</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseSupportActionBar<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Use <code>AppCompatActivity.setSupportActionBar</code><br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseSwitchCompatOrMaterialCode<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Use <code>SwitchCompat</code> from AppCompat or <code>SwitchMaterial</code> from Material library<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UseSwitchCompatOrMaterialXml<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Use <code>SwitchCompat</code> from AppCompat or <code>SwitchMaterial</code> from Material library<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UsingOnClickInXml<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Old versions of the platform do not properly support resolving <code>android:onClick</code><br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">WrongRequiresOptIn<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Experimental features defined in Kotlin source code must be annotated with the Kotlin<br/>
+<code>@RequiresOptIn</code> annotation. Using <code>androidx.annotation.RequiresOptIn</code> will prevent the<br/>
+Kotlin compiler from enforcing its opt-in policies.<br/><div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.annotation.experimental<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=459778">https://issuetracker.google.com/issues/new?component=459778</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="IncludedIssuesLink" onclick="reveal('IncludedIssues');">
+List Issues</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ExtraIssuesCardLink" onclick="hideid('ExtraIssuesCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="MissingIssues"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="MissingIssuesCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Disabled Checks</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+One or more issues were not run by lint, either
+because the check is not enabled by default, or because
+it was disabled with a command line flag or via one or
+more <code>lint.xml</code> configuration files in the project directories.
+<div id="SuppressedIssues" style="display: none;"><br/><br/><div class="issue">
+<div class="id">AppCompatMethod<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+When using the appcompat library, there are some methods you should be calling instead of the normal ones; for example, <code>getSupportActionBar()</code> instead of <code>getActionBar()</code>. This lint check looks for calls to the wrong method.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/topic/libraries/support-library/">https://developer.android.com/topic/libraries/support-library/</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">AppLinksAutoVerify<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Ensures that app links are correctly set and associated with website.<br/><div class="moreinfo">More info: <a href="https://g.co/appindexing/applinks">https://g.co/appindexing/applinks</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">BackButton<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+According to the Android Design Guide,<br/>
+<br/>
+"Other platforms use an explicit back button with label to allow the user to navigate up the application's hierarchy. Instead, Android uses the main action bar's app icon for hierarchical navigation and the navigation bar's back button for temporal navigation."<br/>
+<br/>
+This check is not very sophisticated (it just looks for buttons with the label "Back"), so it is disabled by default to not trigger on common scenarios like pairs of Back/Next buttons to paginate through screens.<br/><div class="moreinfo">More info: <a href="https://d.android.com/r/studio-ui/designer/material/design">https://d.android.com/r/studio-ui/designer/material/design</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ConvertToWebp<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The WebP format is typically more compact than PNG and JPEG. As of Android 4.2.1 it supports transparency and lossless conversion as well. Note that there is a quickfix in the IDE which lets you perform conversion.<br/>
+<br/>
+Previously, launcher icons were required to be in the PNG format but that restriction is no longer there, so lint now flags these.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">DalvikOverride<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The Dalvik virtual machine will treat a package private method in one class as overriding a package private method in its super class, even if they are in separate packages.<br/>
+<br/>
+If you really did intend for this method to override the other, make the method <code>protected</code> instead.<br/>
+<br/>
+If you did <b>not</b> intend the override, consider making the method private, or changing its name or signature.<br/>
+<br/>
+Note that this check is disabled be default, because ART (the successor to Dalvik) no longer has this behavior.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">DefaultEncoding<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Some APIs will implicitly use the default system character encoding instead of UTF-8 when converting to or from bytes, such as when creating a default <code>FileReader</code>.<br/>
+<br/>
+This is <i>usually</i> not correct; you only want to do this if you need to read files created by other programs where they have deliberately written in the same encoding. The default encoding varies from platform to platform and can vary from locale to locale, so this makes it difficult to interpret files containing non-ASCII characters.<br/>
+<br/>
+We recommend using UTF-8 everywhere.<br/>
+<br/>
+Note that on Android, the default file encoding is always UTF-8 (see <a href="https://developer.android.com/reference/java/nio/charset/Charset#defaultCharset(">https://developer.android.com/reference/java/nio/charset/Charset#defaultCharset(</a>) for more), so this lint check deliberately does not flag any problems in Android code, since it is always safe to rely on the default character encoding there.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">DuplicateStrings<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Duplicate strings can make applications larger unnecessarily.<br/>
+<br/>
+This lint check looks for duplicate strings, including differences for strings where the only difference is in capitalization. Title casing and all uppercase can all be adjusted in the layout or in code.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/reference/android/widget/TextView.html#attr_android:inputType">https://developer.android.com/reference/android/widget/TextView.html#attr_android:inputType</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">EasterEgg<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+An "easter egg" is code deliberately hidden in the code, both from potential users and even from other developers. This lint check looks for code which looks like it may be hidden from sight.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ExpensiveAssertion<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+In Kotlin, assertions are not handled the same way as from the Java programming language. In particular, they're just implemented as a library call, and inside the library call the error is only thrown if assertions are enabled.<br/>
+<br/>
+This means that the arguments to the <code>assert</code> call will <b>always</b> be evaluated. If you're doing any computation in the expression being asserted, that computation will unconditionally be performed whether or not assertions are turned on. This typically turns into wasted work in release builds.<br/>
+<br/>
+This check looks for cases where the assertion condition is nontrivial, e.g. it is performing method calls or doing more work than simple comparisons on local variables or fields.<br/>
+<br/>
+You can work around this by writing your own inline assert method instead:<br/>
+
+<pre>
+@Suppress("INVISIBLE_REFERENCE", "INVISIBLE_MEMBER")
+inline fun assert(condition: () -> Boolean) {
+    if (_Assertions.ENABLED &amp;&amp; !condition()) {
+        throw AssertionError()
+    }
+}
+</pre>
+<br/>
+In Android, because assertions are not enforced at runtime, instead use this:<br/>
+
+<pre>
+inline fun assert(condition: () -> Boolean) {
+    if (BuildConfig.DEBUG &amp;&amp; !condition()) {
+        throw AssertionError()
+    }
+}
+</pre>
+<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">IconExpectedSize<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+There are predefined sizes (for each density) for launcher icons. You should follow these conventions to make sure your icons fit in with the overall look of the platform.<br/><div class="moreinfo">More info: <a href="https://d.android.com/r/studio-ui/designer/material/iconography">https://d.android.com/r/studio-ui/designer/material/iconography</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ImplicitSamInstance<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Kotlin's support for SAM (single accessor method) interfaces lets you pass a lambda to the interface. This will create a new instance on the fly even though there is no explicit constructor call. If you pass one of these lambdas or method references into a method which (for example) stores or compares the object identity, unexpected results may happen.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">InvalidPackage<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This check scans through libraries looking for calls to APIs that are not included in Android.<br/>
+<br/>
+When you create Android projects, the classpath is set up such that you can only access classes in the API packages that are included in Android. However, if you add other projects to your libs/ folder, there is no guarantee that those .jar files were built with an Android specific classpath, and in particular, they could be accessing unsupported APIs such as java.applet.<br/>
+<br/>
+This check scans through library jars and looks for references to API packages that are not included in Android and flags these. This is only an error if your code calls one of the library classes which wind up referencing the unsupported package.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">KotlinPropertyAccess<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+For a method to be represented as a property in Kotlin, strict &#8220;bean&#8221;-style prefixing must be used.<br/>
+<br/>
+Accessor methods require a <code>get</code> prefix or for boolean-returning methods an <code>is</code> prefix can be used.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#property-prefixes">https://android.github.io/kotlin-guides/interop.html#property-prefixes</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">KotlincFE10<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+K2, the new version of Kotlin compiler, which encompasses the new frontend, is coming. Try to avoid using internal APIs from the old frontend if possible.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LambdaLast<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+To improve calling this code from Kotlin, parameter types eligible for SAM conversion should be last.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last">https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LintDocExample<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Lint's tool for generating documentation for each issue has special support for including a code example which shows how to trigger the report. It will pick the first unit test it can find and pick out the source file referenced from the error message, but you can instead designate a unit test to be the documentation example, and in that case, all the files are included.<br/>
+<br/>
+To designate a unit test as the documentation example for an issue, name the test <code>testDocumentationExample</code>, or if your detector reports multiple issues, <code>testDocumentationExample</code>&lt;Id>, such as <code>testDocumentationExampleMyId</code>.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LintImplPsiEquals<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+You should never compare two PSI elements for equality with <code>equals</code>; use <code>isEquivalentTo(PsiElement)</code> instead.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LintImplUnexpectedDomain<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This checks flags URLs to domains that have not been explicitly allowed for use as a documentation source.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LogConditional<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The <code>BuildConfig</code> class provides a constant, <code>DEBUG</code>, which indicates whether the code is being built in release mode or in debug mode. In release mode, you typically want to strip out all the logging calls. Since the compiler will automatically remove all code which is inside a <code>if (false)</code> check, surrounding your logging calls with a check for <code>BuildConfig.DEBUG</code> is a good idea.<br/>
+<br/>
+If you <b>really</b> intend for the logging to be present in release mode, you can suppress this warning with a <code>@SuppressLint</code> annotation for the intentional logging calls.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">MangledCRLF<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+On Windows, line endings are typically recorded as carriage return plus newline: \r\n.<br/>
+<br/>
+This detector looks for invalid line endings with repeated carriage return characters (without newlines). Previous versions of the ADT plugin could accidentally introduce these into the file, and when editing the file, the editor could produce confusing visual artifacts.<br/><div class="moreinfo">More info: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=375421">https://bugs.eclipse.org/bugs/show_bug.cgi?id=375421</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">MinSdkTooLow<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The value of the <code>minSdkVersion</code> property is too low and can be incremented without noticeably reducing the number of supported devices.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">NegativeMargin<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Margin values should be positive. Negative values are generally a sign that you are making assumptions about views surrounding the current one, or may be tempted to turn off child clipping to allow a view to escape its parent. Turning off child clipping to do this not only leads to poor graphical performance, it also results in wrong touch event handling since touch events are based strictly on a chain of parent-rect hit tests. Finally, making assumptions about the size of strings can lead to localization problems.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">NewerVersionAvailable<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This detector checks with a central repository to see if there are newer versions available for the dependencies used by this project. This is similar to the <code>GradleDependency</code> check, which checks for newer versions available in the Android SDK tools and libraries, but this works with any MavenCentral dependency, and connects to the library every time, which makes it more flexible but also <b>much</b> slower.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">NoHardKeywords<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Do not use Kotlin&#8217;s hard keywords as the name of methods or fields. These require the use of backticks to escape when calling from Kotlin. Soft keywords, modifier keywords, and special identifiers are allowed.<br/>
+<br/>
+For example, ActionEvent's <code>getWhen()</code> method requires backticks when used from Kotlin:
+<pre>
+val timestamp = event.`when`
+</pre>
+<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#no-hard-keywords">https://android.github.io/kotlin-guides/interop.html#no-hard-keywords</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">NoOp<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This check looks for code which looks like it's a no-op -- usually leftover expressions from interactive debugging, but in some cases bugs where you had intended to do something with the expression such as assign it to a field.<br/><br/>
+This check can be configured via the following options:<br/><br/>
+<div class="options">
+<b>pure-getters</b> (default is false):<br/>
+Whether to assume methods with getter-names have no side effects.<br/>
+<br/>
+Getter methods (where names start with <code>get</code> or <code>is</code>, and have non-void return types, and no arguments) should not have side effects. With this option turned on, lint will assume that is the case and will list any getter calls whose results are ignored as suspicious code.<br/>
+<br/>
+To configure this option, use a `lint.xml` file in the project or source folder using an <code>&lt;option&gt;</code> block like the following:
+<pre class="errorlines">
+<span class="lineno"> 1 </span><span class="tag">&lt;lint></span>
+<span class="lineno"> 2 </span>    <span class="tag">&lt;issue</span><span class="attribute"> id</span>=<span class="value">"NoOp"</span>>
+<span class="caretline"><span class="lineno"> 3 </span>        <span class="tag">&lt;option</span><span class="attribute"> name</span>=<span class="warning"><span class="value">"pure-getters"</span> <span class="attribute">value</span>=<span class="value">"false"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;/issue></span>
+<span class="lineno"> 5 </span><span class="tag">&lt;/lint></span>
+</pre>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">PermissionNamingConvention<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Permissions should be prefixed with an app's package name, using reverse-domain-style naming. This prefix should be followed by <code>.permission.</code>, and then a description of the capability that the permission represents, in upper SNAKE_CASE. For example, <code>com.example.myapp.permission.ENGAGE_HYPERSPACE</code>.<br/>
+<br/>
+Following this recommendation avoids naming collisions, and helps clearly identify the owner and intention of a custom permission.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">Registered<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Activities, services and content providers should be registered in the <code>AndroidManifest.xml</code> file using <code>&lt;activity></code>, <code>&lt;service></code> and <code>&lt;provider></code> tags.<br/>
+<br/>
+If your activity is simply a parent class intended to be subclassed by other "real" activities, make it an abstract class.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html">https://developer.android.com/guide/topics/manifest/manifest-intro.html</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">RequiredSize<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+All views must specify an explicit <code>layout_width</code> and <code>layout_height</code> attribute. There is a runtime check for this, so if you fail to specify a size, an exception is thrown at runtime.<br/>
+<br/>
+It's possible to specify these widths via styles as well. GridLayout, as a special case, does not require you to specify a size.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">SelectableText<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+If a <code>&lt;TextView></code> is used to display data, the user might want to copy that data and paste it elsewhere. To allow this, the <code>&lt;TextView></code> should specify <code>android:textIsSelectable="true"</code>.<br/>
+<br/>
+This lint check looks for TextViews which are likely to be displaying data: views whose text is set dynamically.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">StopShip<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Using the comment <code>// STOPSHIP</code> can be used to flag code that is incomplete but checked in. This comment marker can be used to indicate that the code should not be shipped until the issue is addressed, and lint will look for these. In Gradle projects, this is only checked for non-debug (release) builds.<br/>
+<br/>
+In Kotlin, the <code>TODO()</code> method is also treated as a stop ship marker; you can use it to make incomplete code compile, but it will throw an exception at runtime and therefore should be fixed before shipping releases.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">StringFormatTrivial<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Every call to <code>String.format</code> creates a new <code>Formatter</code> instance, which will decrease the performance of your app. <code>String.format</code> should only be used when necessary--if the formatted string contains only trivial conversions (e.g. <code>b</code>, <code>s</code>, <code>c</code>) and there are no translation concerns, it will be more efficient to replace them and concatenate with <code>+</code>.<br/><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">SyntheticAccessor<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+A private inner class which is accessed from the outer class will force the compiler to insert a synthetic accessor; this means that you are causing extra overhead. This is not important in small projects, but is important for large apps running up against the 64K method handle limit, and especially for <b>libraries</b> where you want to make sure your library is as small as possible for the cases where your library is used in an app running up against the 64K limit.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">TypographyQuotes<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Straight single quotes and double quotes, when used as a pair, can be replaced by "curvy quotes" (or directional quotes). Use the right single quotation mark for apostrophes. Never use generic quotes ", ' or free-standing accents `, ´ for quotation marks, apostrophes, or primes. This can make the text more readable.<br/><div class="moreinfo">More info: <a href="https://en.wikipedia.org/wiki/Quotation_mark">https://en.wikipedia.org/wiki/Quotation_mark</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnknownNullness<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+To improve referencing this code from Kotlin, consider adding explicit nullness information here with either <code>@NonNull</code> or <code>@Nullable</code>.<br/><br/>
+This check can be configured via the following options:<br/><br/>
+<div class="options">
+<b>ignore-deprecated</b> (default is false):<br/>
+Whether to ignore classes and members that have been annotated with <code>@Deprecated</code>.<br/>
+<br/>
+Normally this lint check will flag all unannotated elements, but by setting this option to <code>true</code> it will skip any deprecated elements.<br/>
+<br/>
+To configure this option, use a `lint.xml` file in the project or source folder using an <code>&lt;option&gt;</code> block like the following:
+<pre class="errorlines">
+<span class="lineno"> 1 </span><span class="tag">&lt;lint></span>
+<span class="lineno"> 2 </span>    <span class="tag">&lt;issue</span><span class="attribute"> id</span>=<span class="value">"UnknownNullness"</span>>
+<span class="caretline"><span class="lineno"> 3 </span>        <span class="tag">&lt;option</span><span class="attribute"> name</span>=<span class="warning"><span class="value">"ignore-deprecated"</span> <span class="attribute">value</span>=<span class="value">"false"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;/issue></span>
+<span class="lineno"> 5 </span><span class="tag">&lt;/lint></span>
+</pre>
+</div><div class="moreinfo">More info: <a href="https://developer.android.com/kotlin/interop#nullability_annotations">https://developer.android.com/kotlin/interop#nullability_annotations</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnsupportedChromeOsHardware<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The <code>&lt;uses-feature></code> element should not require this unsupported large screen hardware feature. Any &lt;uses-feature> not explicitly marked with <code>required="false"</code> is necessary on the device to be installed on. Ensure that any features that might prevent it from being installed on a ChromeOS, large screen, or foldable device are reviewed and marked as not required in the manifest.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/topic/arc/manifest.html#incompat-entries">https://developer.android.com/topic/arc/manifest.html#incompat-entries</a>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnusedIds<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+This resource id definition appears not to be needed since it is not referenced from anywhere. Having id definitions, even if unused, is not necessarily a bad idea since they make working on layouts and menus easier, so there is not a strong reason to delete these.<br/>
+<br/>
+<br/>
+The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.<br/>
+<br/>
+You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.<br/>
+<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">ValidActionsXml<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Ensures that an actions XML file is properly formed<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">VulnerableCordovaVersion<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The version of Cordova used in the app is vulnerable to security issues. Please update to the latest Apache Cordova version.<br/><div class="moreinfo">More info: <a href="https://cordova.apache.org/announcements/2015/11/20/security.html">https://cordova.apache.org/announcements/2015/11/20/security.html</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">WrongThreadInterprocedural<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Searches for interprocedural call paths that violate thread annotations in the program. Tracks the flow of instantiated types and lambda expressions to increase accuracy across method boundaries.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/components/processes-and-threads.html#Threads">https://developer.android.com/guide/components/processes-and-threads.html#Threads</a>
+</div><br/>
+<br/></div>
+</div>
+</div>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SuppressedIssuesLink" onclick="reveal('SuppressedIssues');">
+List Missing Issues</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MissingIssuesCardLink" onclick="hideid('MissingIssuesCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="SuppressInfo"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SuppressCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Suppressing Warnings and Errors</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+Lint errors can be suppressed in a variety of ways:<br/>
+<br/>
+1. With a <code>@SuppressLint</code> annotation in the Java code<br/>
+2. With a <code>tools:ignore</code> attribute in the XML file<br/>
+3. With a //noinspection comment in the source code<br/>
+4. With ignore flags specified in the <code>build.gradle</code> file, as explained below<br/>
+5. With a <code>lint.xml</code> configuration file in the project<br/>
+6. With a <code>lint.xml</code> configuration file passed to lint via the --config flag<br/>
+7. With the --ignore flag passed to lint.<br/>
+<br/>
+To suppress a lint warning with an annotation, add a <code>@SuppressLint("id")</code> annotation on the class, method or variable declaration closest to the warning instance you want to disable. The id can be one or more issue id's, such as <code>"UnusedResources"</code> or <code>{"UnusedResources","UnusedIds"}</code>, or it can be <code>"all"</code> to suppress all lint warnings in the given scope.<br/>
+<br/>
+To suppress a lint warning with a comment, add a <code>//noinspection id</code> comment on the line before the statement with the error.<br/>
+<br/>
+To suppress a lint warning in an XML file, add a <code>tools:ignore="id"</code> attribute on the element containing the error, or one of its surrounding elements. You also need to define the namespace for the tools prefix on the root element in your document, next to the <code>xmlns:android</code> declaration:<br/>
+<code>xmlns:tools="http://schemas.android.com/tools"</code><br/>
+<br/>
+To suppress a lint warning in a <code>build.gradle</code> file, add a section like this:<br/>
+
+<pre>
+android {
+    lintOptions {
+        disable 'TypographyFractions','TypographyQuotes'
+    }
+}
+</pre>
+<br/>
+Here we specify a comma separated list of issue id's after the disable command. You can also use <code>warning</code> or <code>error</code> instead of <code>disable</code> to change the severity of issues.<br/>
+<br/>
+To suppress lint warnings with a configuration XML file, create a file named <code>lint.xml</code> and place it at the root directory of the module in which it applies.<br/>
+<br/>
+The format of the <code>lint.xml</code> file is something like the following:<br/>
+
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;lint>
+    &lt;!-- Ignore everything in the test source set -->
+    &lt;issue id="all">
+        &lt;ignore path="\*/test/\*" />
+    &lt;/issue>
+
+    &lt;!-- Disable this given check in this project -->
+    &lt;issue id="IconMissingDensityFolder" severity="ignore" />
+
+    &lt;!-- Ignore the ObsoleteLayoutParam issue in the given files -->
+    &lt;issue id="ObsoleteLayoutParam">
+        &lt;ignore path="res/layout/activation.xml" />
+        &lt;ignore path="res/layout-xlarge/activation.xml" />
+        &lt;ignore regexp="(foo|bar)\.java" />
+    &lt;/issue>
+
+    &lt;!-- Ignore the UselessLeaf issue in the given file -->
+    &lt;issue id="UselessLeaf">
+        &lt;ignore path="res/layout/main.xml" />
+    &lt;/issue>
+
+    &lt;!-- Change the severity of hardcoded strings to "error" -->
+    &lt;issue id="HardcodedText" severity="error" />
+&lt;/lint>
+</pre>
+<br/>
+To suppress lint checks from the command line, pass the --ignore flag with a comma separated list of ids to be suppressed, such as:<br/>
+<code>$ lint --ignore UnusedResources,UselessLeaf /my/project/path</code><br/>
+<br/>
+For more information, see <a href="https://developer.android.com/studio/write/lint.html#config">https://developer.android.com/studio/write/lint.html#config</a><br/>
+
+            </div>
+            </div>
+          </section>    </div>
+  </main>
+</div>
+</body>
+</html>

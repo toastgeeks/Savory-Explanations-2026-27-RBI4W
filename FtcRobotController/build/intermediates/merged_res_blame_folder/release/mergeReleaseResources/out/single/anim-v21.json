@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/fragment_fast_out_extra_slow_in.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-fragment-1.3.6-1:/anim-v21/fragment_fast_out_extra_slow_in.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/m3_bottom_sheet_slide_in.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/m3_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/mtrl_bottom_sheet_slide_in.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/mtrl_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/mtrl_bottom_sheet_slide_out.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/mtrl_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/m3_side_sheet_exit_to_right.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/m3_side_sheet_exit_to_right.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/m3_bottom_sheet_slide_out.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/m3_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/m3_side_sheet_enter_from_right.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/m3_side_sheet_enter_from_right.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/m3_side_sheet_exit_to_left.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/m3_side_sheet_exit_to_left.xml"
+    },
+    {
+        "merged": "com.qualcomm.ftcrobotcontroller.FtcRobotController-release-40:/anim-v21/m3_side_sheet_enter_from_left.xml",
+        "source": "com.qualcomm.ftcrobotcontroller.FtcRobotController-material-1.12.0-4:/anim-v21/m3_side_sheet_enter_from_left.xml"
+    }
+]

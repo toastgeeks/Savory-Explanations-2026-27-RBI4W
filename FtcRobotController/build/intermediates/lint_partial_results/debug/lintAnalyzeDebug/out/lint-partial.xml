@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.0" type="partial_results">
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="org.firstinspires.ftc.ftccommon.internal.RunOnBoot"
+                    boolean="true"/>
+                <entry
+                    name="org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity"
+                    boolean="true"/>
+                <entry
+                    name="org.firstinspires.ftc.robotcontroller.internal.PermissionValidatorWrapper"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.array.app_theme_ids"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="59"
+            column="18"
+            startOffset="2710"
+            endLine="59"
+            endColumn="38"
+            endOffset="2730"/>
+        <location id="R.raw.gold"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/raw/gold.wav"/>
+        <location id="R.raw.silver"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/raw/silver.wav"/>
+        <location id="R.string.blocks_menu_item"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="46"
+            column="11"
+            startOffset="1962"
+            endLine="46"
+            endColumn="34"
+            endOffset="1985"/>
+        <location id="R.style.AppThemeBlueRC"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="11"
+            column="12"
+            startOffset="306"
+            endLine="11"
+            endColumn="33"
+            endOffset="327"/>
+        <location id="R.style.AppThemeGreenRC"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="8"
+            column="12"
+            startOffset="233"
+            endLine="8"
+            endColumn="34"
+            endOffset="255"/>
+        <location id="R.style.AppThemeOrangeRC"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="17"
+            column="12"
+            startOffset="452"
+            endLine="17"
+            endColumn="35"
+            endOffset="475"/>
+        <location id="R.style.AppThemePurpleRC"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="14"
+            column="12"
+            startOffset="377"
+            endLine="14"
+            endColumn="35"
+            endOffset="400"/>
+        <location id="R.style.AppThemeTealRC"
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="20"
+            column="12"
+            startOffset="527"
+            endLine="20"
+            endColumn="33"
+            endOffset="548"/>
+        <entry
+            name="model"
+            string="array[app_theme_ids(D),app_theme_names(R),app_theme_tokens(R),app_theme_colors(R)],attr[textWhite(R),textMediumDark(R)],color[background_black(R),background_very_light_grey(R)],dimen[activity_vertical_margin(U),activity_horizontal_margin(U)],drawable[ic_launcher(R),icon_menu(U),icon_robotcontroller(U)],id[entire_screen(U),top_bar(D),robotIcon(U),textDeviceName(U),menu_buttons(U),included_header(D),RelativeLayout(D),textNetworkConnectionStatus(U),textRobotStatus(U),textOpMode(U),textGamepad1(U),monitorContainer(U),cameraMonitorViewId(D),textErrorMessage(U),textGamepad2(U),webViewBlocksRuntime(U),action_settings(U),action_restart_robot(U),action_configure_robot(U),action_program_and_manage(U),action_inspection_mode(U),action_about(U),action_exit_app(U)],layout[activity_ftc_controller(U),header(R)],menu[ftc_robot_controller(U)],raw[gold(D),silver(D)],string[app_name(U),settings_menu_item(U),restart_robot_menu_item(U),configure_robot_menu_item(U),program_and_manage_menu_item(U),inspection_mode_menu_item(U),about_menu_item(U),exit_menu_item(U),blocks_menu_item(D),toastWifiConfigurationComplete(U),toastRestartingRobot(U),toastWifiUpBeforeProgrammingMode(U),pref_ftc_season_year_of_current_rc(U),packageName(U),packageNameRobotController(R),prefcat_configure_robot(R),pref_device_name(R),prefedit_device_name_summary_rc(R),prefedit_device_name_rc(R),pref_app_theme(R),prefedit_app_theme_summary_rc(R),prefedit_app_theme_rc(R),pref_sound_on_off(R),prefedit_sound_on_off_summary_rc(R),prefedit_sound_on_off(R),pref_launch_advanced_rc_settings(R),summaryAdvancedRCSettings(R),titleAdvancedRCSettings(R),pref_launch_viewlogs(R),prefedit_view_logs_summary(R),prefedit_view_logs(R),pref_rc_connected(R),pref_warn_about_2_4_ghz_band(R),pref_warn_about_obsolete_software(R),pref_warn_about_mismatched_app_versions(R),pref_warn_about_incorrect_clocks(R),pref_wifi_automute(R),pref_pairing_kind(R),toastRobotSetupComplete(R),toastRestartRobotComplete(R),pref_wifip2p_channel(R),appThemeChangeRestartNotifyRC(R),permRcWriteExternalStorageExplain(R),permRcReadExternalStorageExplain(R),permRcCameraExplain(R),permAccessLocationExplain(R),permReadPhoneState(R),permGenericExplain(R)],style[AppThemeRedRC(U),FtcTextViewStyleBold(R),AppThemeGreenRC(D),AppThemeBlueRC(D),AppThemePurpleRC(D),AppThemeOrangeRC(D),AppThemeTealRC(D),AppTheme_Red(R),AppTheme_Green(E),AppTheme_Blue(E),AppTheme_Purple(E),AppTheme_Orange(E),AppTheme_Teal(E)],xml[device_filter(U),app_settings(U)];0^59^5b^5c^5d^5e^5f,24^6^c^f^4^b^25^7^8^9^14^15^17^16^5^5a^1b,26^2a^2b^2c^2d^2e^2f^30,36^37,59^60,5b^61,5c^62,5d^63,5e^64,5f^65,67^38^39^3a^3b^1^2^3c^3d^3e^3^3f^40^41^42^43^44^36^45^46^47;;;"/>
+    </map>
+
+</incidents>

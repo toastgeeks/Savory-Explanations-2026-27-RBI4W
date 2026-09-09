@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.0" type="conditional_incidents">
+
+    <incident
+        id="IntentFilterExportedReceiver"
+        severity="warning"
+        message="As of Android 12, `android:exported` must be set; use `true` to make the activity available to other apps, and `false` otherwise. For launcher activities, this should be set to `true`.">
+        <fix-attribute
+            description="Set exported=&quot;true&quot;"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="exported"
+            value="true"/>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="23"
+            column="6"
+            startOffset="838"
+            endLine="23"
+            endColumn="14"
+            endOffset="846"/>
+    </incident>
+
+    <incident
+        id="IntentFilterExportedReceiver"
+        severity="warning"
+        message="As of Android 12, `android:exported` must be set; use `true` to make the activity available to other apps, and `false` otherwise.">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set exported=&quot;true&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="exported"
+                value="true"/>
+            <fix-attribute
+                description="Set exported=&quot;false&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="exported"
+                value="false"/>
+        </fix-alternatives>
+        <location
+            file="${:FtcRobotController*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="36"
+            column="6"
+            startOffset="1342"
+            endLine="36"
+            endColumn="14"
+            endOffset="1350"/>
+    </incident>
+
+</incidents>
