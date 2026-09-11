@@ -280,6 +280,6 @@ a name of "huskylens".</comment>
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<OpModeMeta flavor="TELEOP" group="Sensor" />
 <Enabled value="true" />
 </Extra>

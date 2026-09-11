@@ -2670,6 +2670,6 @@ This function is useful for giving the robot a moment to stabilize its heading b
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="" />
+<OpModeMeta flavor="AUTONOMOUS" group="Robot" autoTransition="" />
 <Enabled value="true" />
 </Extra>

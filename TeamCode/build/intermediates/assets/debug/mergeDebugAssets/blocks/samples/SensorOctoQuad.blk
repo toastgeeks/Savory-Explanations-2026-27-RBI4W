@@ -511,6 +511,6 @@ See the sensor's product page: https://www.tindie.com/products/35114/</comment>
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<OpModeMeta flavor="TELEOP" group="OctoQuad" />
 <Enabled value="true" />
 </Extra>

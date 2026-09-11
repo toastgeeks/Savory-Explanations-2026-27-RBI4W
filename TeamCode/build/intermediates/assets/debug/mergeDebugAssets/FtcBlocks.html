@@ -212,16 +212,25 @@
         <select id="project_flavor" class="not_bold" onchange="projectFlavorChanged()">
           <option value="TELEOP">TeleOp</option>
           <option value="AUTONOMOUS">Autonomous</option>
+          <option value="UTILITY">Utility</option>
         </select>
         &nbsp;
-        Group:&nbsp;<input type="text" id="project_group" class="not_bold" oninput="projectGroupChanged()">
-        &nbsp;
+        <span id="project_group_span">
+          Group:&nbsp;<input type="text" id="project_group" class="not_bold" oninput="projectGroupChanged()">
+          &nbsp;
+        </span>
+        <span id="project_description_span" style="display: none">
+          Description:&nbsp;<input type="text" id="project_description" class="not_bold" oninput="projectDescriptionChanged()">
+          &nbsp;
+        </span>
         <input type="checkbox" id="project_enabled" class="project_row_checkbox" onclick="projectEnabledChanged()">&nbsp;Enabled
         &nbsp;
         &nbsp;
-        <span id="project_autoTransition_label" style="display: none;">Preselect TeleOp:</span>
-        <select id="project_autoTransition" class="not_bold" style="width: 150px; display: none;" onchange="projectAutoTransitionChanged()">
-        </select>
+        <span id="project_autoTransition_span" style="display: none;">
+          Preselect TeleOp:
+          <select id="project_autoTransition" class="not_bold" style="width: 150px;" onchange="projectAutoTransitionChanged()">
+          </select>
+        </span>
       </td>
       <td align="right">
         <input type="checkbox" id="show_java" class="project_row_checkbox" onclick="showJavaChanged()">&nbsp;Show Java&nbsp;&nbsp;

@@ -1287,3 +1287,179 @@ Blockly.FtcJava['visionPortal_typedEnum_multiPortalLayout'] = function(block) {
   Blockly.FtcJava.generateImport_('VisionPortal');
   return [code, Blockly.FtcJava.ORDER_MEMBER];
 };
+
+// CameraCompatibilityManager
+
+Blockly.Blocks['cameraCompatibilityManager_typedEnum_quirk'] = {
+  init: function() {
+    var QUIRK_CHOICES = [
+        ['RESET_ALT_SETTING_ON_RELEASE', 'RESET_ALT_SETTING_ON_RELEASE'],
+        ['AVOID_LIB_USB_RESET_DEVICE', 'AVOID_LIB_USB_RESET_DEVICE'],
+    ];
+    this.setOutput(true, 'CameraCompatibilityManager.Quirk');
+    this.appendDummyInput()
+        .appendField(createNonEditableField('CameraCompatibilityManager.Quirk'))
+        .appendField('.')
+        .appendField(new Blockly.FieldDropdown(QUIRK_CHOICES), 'QUIRK');
+    this.setColour(getPropertyColor);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    var TOOLTIPS = [
+        ['RESET_ALT_SETTING_ON_RELEASE', 'The CameraCompatibilityManager.Quirk value RESET_ALT_SETTING_ON_RELEASE.'],
+        ['AVOID_LIB_USB_RESET_DEVICE', 'The CameraCompatibilityManager.Quirk value AVOID_LIB_USB_RESET_DEVICE.'],
+    ];
+    this.setTooltip(function() {
+      var key = thisBlock.getFieldValue('QUIRK');
+      for (var i = 0; i < TOOLTIPS.length; i++) {
+        if (TOOLTIPS[i][0] == key) {
+          return TOOLTIPS[i][1];
+        }
+      }
+      return '';
+    });
+  }
+};
+
+Blockly.JavaScript['cameraCompatibilityManager_typedEnum_quirk'] = function(block) {
+  var code = '"' + block.getFieldValue('QUIRK') + '"';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.FtcJava['cameraCompatibilityManager_typedEnum_quirk'] = function(block) {
+  var code = 'CameraCompatibilityManager.Quirk.' + block.getFieldValue('QUIRK');
+  Blockly.FtcJava.generateImport_('CameraCompatibilityManager');
+  return [code, Blockly.FtcJava.ORDER_MEMBER];
+};
+
+Blockly.Blocks['cameraCompatibilityManager_addQuirk'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField('call')
+        .appendField(createNonEditableField('CameraCompatibilityManager'))
+        .appendField('.')
+        .appendField(createNonEditableField('addQuirk'));
+    this.appendValueInput('VID').setCheck('Number')
+        .appendField('vendorId')
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.appendValueInput('PID').setCheck('Number')
+        .appendField('productId')
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.appendValueInput('QUIRK').setCheck('CameraCompatibilityManager.Quirk')
+        .appendField('quirk')
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(functionColor);
+    this.setTooltip('Notes a quirk for a particular camera model.');
+  }
+};
+
+Blockly.JavaScript['cameraCompatibilityManager_addQuirk'] = function(block) {
+  var vid = Blockly.JavaScript.valueToCode(
+      block, 'VID', Blockly.JavaScript.ORDER_COMMA);
+  var pid = Blockly.JavaScript.valueToCode(
+      block, 'PID', Blockly.JavaScript.ORDER_COMMA);
+  var quirk = Blockly.JavaScript.valueToCode(
+      block, 'QUIRK', Blockly.JavaScript.ORDER_COMMA);
+  return visionPortalIdentifierForJavaScript + '.cameraCompatibilityManager_addQuirk(' +
+      vid + ', ' + pid + ', ' + quirk + ');\n';
+};
+
+Blockly.FtcJava['cameraCompatibilityManager_addQuirk'] = function(block) {
+  var vid = Blockly.FtcJava.valueToCode(
+      block, 'VID', Blockly.FtcJava.ORDER_COMMA);
+  var pid = Blockly.FtcJava.valueToCode(
+      block, 'PID', Blockly.FtcJava.ORDER_COMMA);
+  var quirk = Blockly.FtcJava.valueToCode(
+      block, 'QUIRK', Blockly.FtcJava.ORDER_COMMA);
+  Blockly.FtcJava.generateImport_('CameraCompatibilityManager');
+  return 'CameraCompatibilityManager.getInstance().addQuirk(' +
+      vid + ', ' + pid + ', ' + quirk + ');\n';
+};
+
+Blockly.Blocks['cameraCompatibilityManager_removeQuirk'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField('call')
+        .appendField(createNonEditableField('CameraCompatibilityManager'))
+        .appendField('.')
+        .appendField(createNonEditableField('removeQuirk'));
+    this.appendValueInput('VID').setCheck('Number')
+        .appendField('vendorId')
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.appendValueInput('PID').setCheck('Number')
+        .appendField('productId')
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.appendValueInput('QUIRK').setCheck('CameraCompatibilityManager.Quirk')
+        .appendField('quirk')
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setColour(functionColor);
+    this.setTooltip('Forgets about a previously added quirk for a particular camera model.');
+  }
+};
+
+Blockly.JavaScript['cameraCompatibilityManager_removeQuirk'] = function(block) {
+  var vid = Blockly.JavaScript.valueToCode(
+      block, 'VID', Blockly.JavaScript.ORDER_COMMA);
+  var pid = Blockly.JavaScript.valueToCode(
+      block, 'PID', Blockly.JavaScript.ORDER_COMMA);
+  var quirk = Blockly.JavaScript.valueToCode(
+      block, 'QUIRK', Blockly.JavaScript.ORDER_COMMA);
+  return visionPortalIdentifierForJavaScript + '.cameraCompatibilityManager_removeQuirk(' +
+      vid + ', ' + pid + ', ' + quirk + ');\n';
+};
+
+Blockly.FtcJava['cameraCompatibilityManager_removeQuirk'] = function(block) {
+  var vid = Blockly.FtcJava.valueToCode(
+      block, 'VID', Blockly.FtcJava.ORDER_COMMA);
+  var pid = Blockly.FtcJava.valueToCode(
+      block, 'PID', Blockly.FtcJava.ORDER_COMMA);
+  var quirk = Blockly.FtcJava.valueToCode(
+      block, 'QUIRK', Blockly.FtcJava.ORDER_COMMA);
+  Blockly.FtcJava.generateImport_('CameraCompatibilityManager');
+  return 'CameraCompatibilityManager.getInstance().removeQuirk(' +
+      vid + ', ' + pid + ', ' + quirk + ');\n';
+};
+
+Blockly.Blocks['cameraCompatibilityManager_getQuirks'] = {
+  init: function() {
+    this.setOutput(true, 'Array');
+    this.appendDummyInput()
+        .appendField('call')
+        .appendField(createNonEditableField('CameraCompatibilityManager'))
+        .appendField('.')
+        .appendField(createNonEditableField('getQuirks'));
+    this.appendValueInput('VID').setCheck('Number')
+        .appendField('vendorId')
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.appendValueInput('PID').setCheck('Number')
+        .appendField('productId')
+        .setAlign(Blockly.ALIGN_RIGHT);
+    this.setColour(functionColor);
+    this.setTooltip('Gets the list of quirks for a given camera.');
+  }
+};
+
+Blockly.JavaScript['cameraCompatibilityManager_getQuirks'] = function(block) {
+  var vid = Blockly.JavaScript.valueToCode(
+      block, 'VID', Blockly.JavaScript.ORDER_COMMA);
+  var pid = Blockly.JavaScript.valueToCode(
+      block, 'PID', Blockly.JavaScript.ORDER_COMMA);
+  var code = 'JSON.parse(' +
+      visionPortalIdentifierForJavaScript + '.cameraCompatibilityManager_getQuirks(' +
+      vid + ', ' + pid + '))';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.FtcJava['cameraCompatibilityManager_getQuirks'] = function(block) {
+  var vid = Blockly.FtcJava.valueToCode(
+      block, 'VID', Blockly.FtcJava.ORDER_COMMA);
+  var pid = Blockly.FtcJava.valueToCode(
+      block, 'PID', Blockly.FtcJava.ORDER_COMMA);
+  Blockly.FtcJava.generateImport_('CameraCompatibilityManager');
+  var code = 'CameraCompatibilityManager.getInstance().getQuirks(' +
+      vid + ', ' + pid + ')';
+  return [code, Blockly.FtcJava.ORDER_FUNCTION_CALL];
+};

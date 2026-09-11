@@ -1038,6 +1038,6 @@ and that the left motors are flipped such that when they turn clockwise the whee
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<OpModeMeta flavor="TELEOP" group="Robot" />
 <Enabled value="true" />
 </Extra>

@@ -171,6 +171,6 @@ In this POV mode, the left joystick (up and down) moves the robot forward and ba
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<OpModeMeta flavor="TELEOP" group="" />
 <Enabled value="true" />
 </Extra>

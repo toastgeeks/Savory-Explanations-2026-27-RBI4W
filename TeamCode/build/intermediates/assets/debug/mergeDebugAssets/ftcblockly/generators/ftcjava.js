@@ -1028,20 +1028,34 @@ Blockly.FtcJava.getClassAnnotationsForFtcJava_ = function() {
   if (flavor == 'AUTONOMOUS') {
     Blockly.FtcJava.generateImport_('Autonomous');
     annotations += '@Autonomous(';
-  } else {
+  } else if (flavor == 'TELEOP') {
     Blockly.FtcJava.generateImport_('TeleOp');
     annotations += '@TeleOp(';
+  } else if (flavor == 'UTILITY') {
+    Blockly.FtcJava.generateImport_('Utility');
+    annotations += '@Utility(';
   }
   annotations += 'name = "' + Blockly.FtcJava.getOpModeNameForFtcJava_() + '"';
 
-  var groupTextInput = document.getElementById('project_group');
-  if (groupTextInput) {
-    var group = groupTextInput.value;
-    if (group) {
-      annotations += ', group = "' + group + '"';
+  if (flavor === 'UTILITY') {
+    var descriptionTextInput = document.getElementById('project_description');
+    if (descriptionTextInput) {
+      var description = descriptionTextInput.value;
+      if (description) {
+        annotations += ', description = "' + description + '"';
+      }
+    }
+  } else {
+    var groupTextInput = document.getElementById('project_group');
+    if (groupTextInput) {
+      var group = groupTextInput.value;
+      if (group) {
+        annotations += ', group = "' + group + '"';
+      }
     }
   }
-  if (flavor == 'AUTONOMOUS') {
+
+  if (flavor === 'AUTONOMOUS') {
     var autoTransitionSelect = document.getElementById('project_autoTransition');
     if (autoTransitionSelect) {
       var autoTransition = autoTransitionSelect.options[autoTransitionSelect.selectedIndex].value;

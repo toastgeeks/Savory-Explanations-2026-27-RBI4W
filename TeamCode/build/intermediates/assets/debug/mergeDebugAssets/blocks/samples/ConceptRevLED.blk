@@ -84,6 +84,6 @@ This OpMode assumes that the REV Digital Indicator is setup as 2 LEDs named fron
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<OpModeMeta flavor="TELEOP" group="Concept" />
 <Enabled value="true" />
 </Extra>

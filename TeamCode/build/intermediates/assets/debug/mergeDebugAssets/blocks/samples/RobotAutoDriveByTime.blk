@@ -603,6 +603,6 @@ The desired path in this example is:
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="" />
+<OpModeMeta flavor="AUTONOMOUS" group="Robot" autoTransition="" />
 <Enabled value="true" />
 </Extra>

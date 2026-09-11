@@ -252,7 +252,7 @@ function projectEnabledChanged() {
 }
 
 /**
- * Saves the workspace blocks (including OpMode flavor, group, autoTransition, enable) and
+ * Saves the workspace blocks (including OpMode flavor, group, description, autoTransition, enable) and
  * generated javascript.
  * Called from Save button onclick.
  */
@@ -306,9 +306,10 @@ function getCurrentBlkFileContent() {
   var flavorSelect = document.getElementById('project_flavor');
   var flavor = flavorSelect.options[flavorSelect.selectedIndex].value;
   var group = document.getElementById('project_group').value;
+  var description = document.getElementById('project_description').value;
   var autoTransitionSelect = document.getElementById('project_autoTransition');
   var autoTransition = autoTransitionSelect.options[autoTransitionSelect.selectedIndex].value;
-  var blkFileContent = blocksContent + formatExtraXml(flavor, group, autoTransition, projectEnabled);
+  var blkFileContent = blocksContent + formatExtraXml(flavor, group, description, autoTransition, projectEnabled);
   // Break the blocks content into multiple lines so it is easier to read/diff.
   var formattedBlkFileContent = blkFileContent
       .replace(/></g, '>\n<')
@@ -597,6 +598,7 @@ function loadBlocks(blkFileContent, opt_blocksLoaded_callback) {
     }
   }
   document.getElementById('project_group').value = extra['group'];
+  document.getElementById('project_description').value = extra['description'];
   var foundAutoTransition = false;
   if (extra['autoTransition']) {
     var autoTransitionSelect = document.getElementById('project_autoTransition');
@@ -610,7 +612,7 @@ function loadBlocks(blkFileContent, opt_blocksLoaded_callback) {
   } else {
     foundAutoTransition = true;
   }
-  setAutoTransitionDisplay();
+  setDisplayForFlavor();
   document.getElementById('project_enabled').checked = extra['enabled'];
 
   if (!foundAutoTransition) {
@@ -1208,19 +1210,24 @@ function isExternal(url) {
 }
 
 function projectFlavorChanged() {
-  setAutoTransitionDisplay();
+  setDisplayForFlavor();
   showJava();
 }
 
-function setAutoTransitionDisplay() {
+function setDisplayForFlavor() {
   var flavorSelect = document.getElementById('project_flavor');
   var flavor = flavorSelect.options[flavorSelect.selectedIndex].value;
-  var display = (flavor == 'AUTONOMOUS') ? 'inline-block' : 'none';
-  document.getElementById('project_autoTransition_label').style.display = display;
-  document.getElementById('project_autoTransition').style.display = display;
+
+  document.getElementById('project_group_span').style.display = (flavor !== 'UTILITY') ? 'inline-block' : 'none';
+  document.getElementById('project_description_span').style.display = (flavor === 'UTILITY') ? 'inline-block' : 'none';
+  document.getElementById('project_autoTransition_span').style.display = (flavor === 'AUTONOMOUS') ? 'inline-block' : 'none';
 }
 
 function projectGroupChanged() {
+  showJava();
+}
+
+function projectDescriptionChanged() {
   showJava();
 }
 

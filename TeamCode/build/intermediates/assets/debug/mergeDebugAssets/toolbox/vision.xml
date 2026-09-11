@@ -1429,4 +1429,20 @@ detections multiple times.
       </block>
     </category>
   </category>
+  <category name="CameraCompatibiityManager">
+      <block type="cameraCompatibilityManager_addQuirk">
+        <value name="VID"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        <value name="PID"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        <value name="QUIRK"><shadow type="cameraCompatibilityManager_typedEnum_quirk"></shadow></value>
+      </block>
+      <block type="cameraCompatibilityManager_removeQuirk">
+        <value name="VID"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        <value name="PID"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        <value name="QUIRK"><shadow type="cameraCompatibilityManager_typedEnum_quirk"></shadow></value>
+      </block>
+      <block type="cameraCompatibilityManager_getQuirks">
+        <value name="VID"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+        <value name="PID"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+      </block>
+  </category>
 </category>

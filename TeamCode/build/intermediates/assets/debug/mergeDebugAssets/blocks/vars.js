@@ -165,10 +165,21 @@ function escapeHtml(text) {
   return out;
 }
 
-function formatExtraXml(flavor, group, autoTransition, enabled) {
+function formatExtraXml(flavor, group, description, autoTransition, enabled) {
+  let opModeMeta = '<OpModeMeta flavor="' + flavor + '"';
+  if (flavor === 'UTILITY') {
+    opModeMeta += ' description="' + description + '"';
+  } else {
+    opModeMeta += ' group="' + group + '"';
+  }
+  if (flavor === 'AUTONOMOUS') {
+    opModeMeta += ' autoTransition="' + autoTransition + '"';
+  }
+  opModeMeta += ' />';
+
   return XML_EXTRA_START +
       '<Extra>' +
-      '<OpModeMeta flavor="' + flavor + '" group="' + group + '" autoTransition="' + autoTransition + '" />' +
+      opModeMeta +
       '<Enabled value="' + enabled + '" />' +
       '</Extra> ';
 }
@@ -190,6 +201,7 @@ function parseExtraXml(blkFileContent) {
   var extra = Object.create(null);
   extra['flavor'] = 'TELEOP';
   extra['group'] = '';
+  extra['description'] = '';
   extra['autoTransition'] = '';
   extra['enabled'] = true;
 
@@ -201,13 +213,27 @@ function parseExtraXml(blkFileContent) {
       if (extraXml.length > 0) {
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(extraXml.trim(), 'text/xml');
-        // Set OpModeMeta and Enabled UI components.
+
         var opModeMetaElements = xmlDoc.getElementsByTagName('OpModeMeta');
         if (opModeMetaElements.length >= 1) {
-          extra['flavor'] = opModeMetaElements[0].getAttribute('flavor');
-          extra['group'] = opModeMetaElements[0].getAttribute('group');
-          extra['autoTransition'] = opModeMetaElements[0].getAttribute('autoTransition');
+          const opModeMetaElement = opModeMetaElements[0];
+          extra['flavor'] = opModeMetaElement.getAttribute('flavor');
+          if (extra['flavor'] === 'UTILITY') {
+            if (opModeMetaElement.hasAttribute('description')) {
+              extra['description'] = opModeMetaElement.getAttribute('description');
+            }
+          } else {
+            if (opModeMetaElement.hasAttribute('group')) {
+              extra['group'] = opModeMetaElement.getAttribute('group');
+            }
+          }
+          if (extra['flavor'] === 'AUTONOMOUS') {
+            if (opModeMetaElement.hasAttribute('autoTransition')) {
+              extra['autoTransition'] = opModeMetaElement.getAttribute('autoTransition');
+            }
+          }
         }
+
         var enabledElements = xmlDoc.getElementsByTagName('Enabled');
         if (enabledElements.length >= 1) {
           var enabledString = enabledElements[0].getAttribute('value');

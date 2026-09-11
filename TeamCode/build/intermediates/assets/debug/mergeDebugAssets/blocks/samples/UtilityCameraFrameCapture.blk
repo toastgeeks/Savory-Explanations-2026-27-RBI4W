@@ -444,6 +444,6 @@ Full calibration instructions are here: https://ftc-docs.firstinspires.org/camer
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<OpModeMeta flavor="TELEOP" group="Utility" />
 <Enabled value="true" />
 </Extra>

@@ -33,6 +33,7 @@ Blockly.Blocks['servo_setProperty'] = {
     var PROPERTY_CHOICES = [
         ['Direction', 'Direction'],
         ['Position', 'Position'],
+        ['PulseWidth', 'PulseWidth'],
     ];
     this.appendValueInput('VALUE') // no type, for compatibility
         .appendField('set')
@@ -48,6 +49,7 @@ Blockly.Blocks['servo_setProperty'] = {
     var TOOLTIPS = [
         ['Direction', 'Sets the direction for the servo.'],
         ['Position', 'Sets the position for the servo.'],
+        ['PulseWidth', 'Sets the pulse width for the servo (in microseconds).']
     ];
     this.setTooltip(function() {
       var key = thisBlock.getFieldValue('PROP');
@@ -118,6 +120,7 @@ Blockly.Blocks['servo_setProperty_Number'] = {
   init: function() {
     var PROPERTY_CHOICES = [
         ['Position', 'Position'],
+        ['PulseWidth', 'PulseWidth']
     ];
     this.appendValueInput('VALUE').setCheck('Number')
         .appendField('set')
@@ -132,6 +135,7 @@ Blockly.Blocks['servo_setProperty_Number'] = {
     var thisBlock = this;
     var TOOLTIPS = [
         ['Position', 'Sets the position for the servo.'],
+        ['PulseWidth', 'Sets the pulse width for the servo (in microseconds).']
     ];
     this.setTooltip(function() {
       var key = thisBlock.getFieldValue('PROP');
@@ -147,6 +151,7 @@ Blockly.Blocks['servo_setProperty_Number'] = {
         var property = thisBlock.getFieldValue('PROP');
         switch (property) {
           case 'Position':
+          case 'PulseWidth':
             return 'double';
           default:
             throw 'Unexpected property ' + property + ' (servo_setProperty_Number getArgumentType).';
@@ -168,6 +173,7 @@ Blockly.Blocks['servo_getProperty'] = {
     var PROPERTY_CHOICES = [
         ['Direction', 'Direction'],
         ['Position', 'Position'],
+        ['PulseWidth', 'PulseWidth']
     ];
     this.setOutput(true); // no type, for compatibility
     this.appendDummyInput()
@@ -180,6 +186,7 @@ Blockly.Blocks['servo_getProperty'] = {
     var TOOLTIPS = [
         ['Direction', 'Returns the direction of the servo.'],
         ['Position', 'Returns the position of the servo.'],
+        ['PulseWidth', 'Returns the pulse width of the servo (in microseconds).']
     ];
     this.setTooltip(function() {
       var key = thisBlock.getFieldValue('PROP');
@@ -245,6 +252,7 @@ Blockly.Blocks['servo_getProperty_Number'] = {
   init: function() {
     var PROPERTY_CHOICES = [
         ['Position', 'Position'],
+        ['PulseWidth', 'PulseWidth']
     ];
     this.setOutput(true, 'Number');
     this.appendDummyInput()
@@ -256,6 +264,7 @@ Blockly.Blocks['servo_getProperty_Number'] = {
     var thisBlock = this;
     var TOOLTIPS = [
         ['Position', 'Returns the position of the servo.'],
+        ['PulseWidth', 'Returns the pulse width of the servo (in microseconds).']
     ];
     this.setTooltip(function() {
       var key = thisBlock.getFieldValue('PROP');
@@ -270,6 +279,7 @@ Blockly.Blocks['servo_getProperty_Number'] = {
       var property = thisBlock.getFieldValue('PROP');
       switch (property) {
         case 'Position':
+        case 'PulseWidth':
           return 'double';
         default:
           throw 'Unexpected property ' + property + ' (servo_getProperty_Number getOutputType).';
